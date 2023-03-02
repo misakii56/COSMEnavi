@@ -1,24 +1,32 @@
 # README
+# <COSMEnavi>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+<化粧品のレビューの検索をして閲覧したり、化粧品のレビューを投稿出来るサイト>
 
-Things you may want to cover:
+### テーマを選んだ理由
+<化粧品を買う時、自分のイメージと違くて失敗してしまった経験があり、化粧品のレビューサイトがあれば買う時の参考になると考え、このテーマにしました。>
 
-* Ruby version
+### ターゲットユーザ
+<化粧品を使う人、化粧品が好きな人>
 
-* System dependencies
+### 主な利用シーン
+<化粧品を買う時、使った化粧品のレビューを投稿する時>
 
-* Configuration
+## 実装機能リスト
+<https://docs.google.com/spreadsheets/d/1PK3gTAsXpYWyOJt19a9InF-lMQ4s7F2imY43QS8bcrs/edit?usp=sharing>
 
-* Database creation
+## 設計書
+<https://drive.google.com/file/d/1yamjcVCrpD99PgNFddBKf7p2hbdYka7s/view?usp=sharing>
 
-* Database initialization
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
