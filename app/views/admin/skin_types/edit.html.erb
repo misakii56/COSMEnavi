@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h4>肌タイプ編集</h4>
+        <p>肌タイプ名</p>
+            <%= form_with model: @skin_type,url:admin_skin_type_path(@skin_type.id) do |f| %>
+             <%= f.text_field :type_name %>
+             <%= f.submit '変更保存', class:"btn btn-success" %>
+            <% end %>
+    </div>
+  </div>
+</div>
