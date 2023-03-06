@@ -1,0 +1,2 @@
+class ParsonalColor < ApplicationRecord
+end
