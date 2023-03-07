@@ -1,2 +1,29 @@
-<h1>Admin::ParsonalColors#index</h1>
-<p>Find me in app/views/admin/parsonal_colors/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+    <div class="badge badge-light">パーソナルカラー一覧・追加</div>
+<div class="d-flex justify-content-around">
+  <%= form_with model: @parsonal_color, url:admin_parsonal_colors_path do |f| %>
+  <%= f.text_field :color_name %>
+  <%= f.submit '新規登録', class:"btn btn-primary" %>
+  </div>
+  <% end %>
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+        <th>パーソナルカラー</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @parsonal_colors.each do |parsonal_color| %>
+      <tr>
+          <td><%= parsonal_color.color_name %></td>
+          <td><%= link_to "編集する", edit_admin_parsonal_color_path(parsonal_color.id), class:"btn btn-primary" %></td>
+      </tr>
+      <% end %>
+  </tbody>
+  </table>
+</div>
+</div>
+</div>

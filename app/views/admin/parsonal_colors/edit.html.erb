@@ -1,2 +1,12 @@
-<h1>Admin::ParsonalColors#edit</h1>
-<p>Find me in app/views/admin/parsonal_colors/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>パーソナルカラー編集</h4>
+        <p>パーソナルカラー名</p>
+            <%= form_with model: @parsonal_color,url:admin_parsonal_color_path(@parsonal_color.id) do |f| %>
+             <%= f.text_field :color_name %>
+             <%= f.submit '変更保存', class:"btn btn-success" %>
+            <% end %>
+    </div>
+  </div>
+</div>
