@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::SessionsController < Devise::SessionsController
+  
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -12,7 +13,12 @@ class Admin::SessionsController < Devise::SessionsController
   # def create
   #   super
   # end
-
+  def after_sign_in_path_for(_resource)
+    admin_parsonal_colors_path
+  end
+  def after_sign_out_path_for(_resource)
+    new_admin_session_path
+  end
   # DELETE /resource/sign_out
   # def destroy
   #   super

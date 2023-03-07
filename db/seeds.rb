@@ -4,4 +4,9 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   ParsonalColor.create(color_name: 'Yellow')
+#   SkinType.create(type_name: 'あ')
+Admin.create!(
+   email: 'test@test',
+   password: '000000'
+)
