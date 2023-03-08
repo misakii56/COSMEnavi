@@ -1,0 +1,26 @@
+ <div class="container">
+          <h4>化粧品詳細</h4>
+  <div class="row">
+    <div class="col-3">
+
+  <% if @cosmetic.image.attached? %>
+    <%= image_tag @cosmetic.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'default_image', size: "200x200" %>
+  <% end %>
+  </div>
+
+<div class="col-2">
+ <p>化粧品名</p>
+ <p>ブランド</p>
+</div>
+
+<div class="col-2">
+<p><%= @cosmetic.name %></p>
+<p><%= @cosmetic.brand %></p>
+
+
+ <div><%= link_to "編集する", edit_admin_cosmetic_path(@cosmetic.id), class:"btn btn-primary" %></div>
+ </div>
+</div>
+</div>

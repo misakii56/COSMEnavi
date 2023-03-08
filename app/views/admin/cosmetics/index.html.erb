@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h4>化粧品一覧</h4>
+      </div>
+        <div class="col-2">
+  <div><%= link_to "化粧品登録", new_admin_cosmetic_path, class:"btn btn-primary" %></div>
+  </div>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+        <th scope="col">化粧品ID</th>
+        <th scope="col">化粧品名</th>
+        <th scope="col">ブランド</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @cosmetics.each do |cosmetic| %>
+      <tr>
+          <td><%= cosmetic.id %></td>
+          <td><%= link_to cosmetic.name, admin_cosmetic_path(cosmetic.id) %></td>
+          <td><%= cosmetic.brand %></td>
+      </tr>
+      <% end %>
+  </tbody>
+  </table>
+    <div class="d-flex justify-content-center">
+  <%= paginate @cosmetics %>
+ </div>
