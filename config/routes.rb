@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  namespace :public do
+    get 'users/show'
+    get 'users/edit'
+    get 'users/confirm'
+    get 'users/out'
+  end
   namespace :admin do
     resources :skin_types
     resources :parsonal_colors

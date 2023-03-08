@@ -11,6 +11,7 @@
     <tr>
         <th scope="col">化粧品ID</th>
         <th scope="col">化粧品名</th>
+        <th scope="col">カラー</th>
         <th scope="col">ブランド</th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
       <tr>
           <td><%= cosmetic.id %></td>
           <td><%= link_to cosmetic.name, admin_cosmetic_path(cosmetic.id) %></td>
+          <td><%= cosmetic.color %></td>
           <td><%= cosmetic.brand %></td>
       </tr>
       <% end %>

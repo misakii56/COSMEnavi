@@ -1,2 +1,22 @@
-<h1>Admin::Cosmetics#edit</h1>
-<p>Find me in app/views/admin/cosmetics/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h4>化粧品編集</h4>
+      <p>化粧品画像</p>
+
+<%= form_with model: @cosmetic, url:admin_cosmetic_path(@cosmetic.id) do |f| %>
+  <%= f.file_field :image, accept: "image/*" %>
+
+  <p>化粧品名</p>
+<%= f.text_field :name %>
+<p>ブランド</p>
+<%= f.text_field :brand %>
+<p>カラー</p>
+<%= f.text_field :color %>
+
+<%= f.submit '変更を保存', class:"btn btn-primary" %>
+  <% end %>
+
+  </div>
+  </div>
+  </div>

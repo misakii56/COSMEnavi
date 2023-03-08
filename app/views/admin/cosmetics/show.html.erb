@@ -13,11 +13,13 @@
 <div class="col-2">
  <p>化粧品名</p>
  <p>ブランド</p>
+ <p>カラー</p>
 </div>
 
-<div class="col-2">
+<div class="col-7">
 <p><%= @cosmetic.name %></p>
 <p><%= @cosmetic.brand %></p>
+<p><%= @cosmetic.color %></p>
 
 
  <div><%= link_to "編集する", edit_admin_cosmetic_path(@cosmetic.id), class:"btn btn-primary" %></div>

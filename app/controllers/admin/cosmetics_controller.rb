@@ -19,10 +19,17 @@ class Admin::CosmeticsController < ApplicationController
   end
 
   def edit
+    @cosmetic = Cosmetic.find(params[:id])
+  end
+  
+  def update
+    @cosmetic = Cosmetic.find(params[:id])
+    @cosmetic.update(cosmetic_params)
+    redirect_to admin_cosmetic_path(@cosmetic.id)
   end
   
      private
   def cosmetic_params
-    params.require(:cosmetic).permit(:name, :brand, :image)
+    params.require(:cosmetic).permit(:name, :brand, :image, :color)
   end
 end

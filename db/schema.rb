@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2023_03_08_120649) do
   create_table "cosmetics", force: :cascade do |t|
     t.string "brand", null: false
     t.string "name", null: false
+    t.string "color", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -22,12 +22,16 @@
     <div class="d-flex align-items-end">
     <% if user_signed_in? %>
       <div class="p-2">マイページ</div>
+
     <% elsif admin_signed_in? %>
+
      <div class="p-2"><%= link_to admin_skin_types_path do %>肌タイプ一覧
       <% end %></div>
-          <div class="p-2"><%= link_to admin_parsonal_colors_path do %>パーソナルカラー一覧
+      <div class="p-2"><%= link_to admin_parsonal_colors_path do %>パーソナルカラー一覧
       <% end %></div>
-      
+      <div class="p-2"><%= link_to admin_cosmetics_path do %>化粧品一覧
+      <% end %></div>
+
       <div class="p-2"><%= link_to destroy_admin_session_path, method: :delete do %>ログアウト
       <% end %></div>
     <% else %>
