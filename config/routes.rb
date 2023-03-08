@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
 
-  namespace :public do
-    get 'users/show'
-    get 'users/edit'
-    get 'users/confirm'
-    get 'users/out'
+ scope module: :public do
+    get 'users/show' => 'users#show', as: 'my_page'
+    get 'users/edit' => 'customers#edit'
+    get 'users/confirm' => 'customers#confirm', as: 'confirm'
+    patch 'users' => 'users#update'
+    patch 'users/out' => 'users#out', as: 'out'
   end
   namespace :admin do
     resources :skin_types
