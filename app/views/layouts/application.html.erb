@@ -21,7 +21,8 @@
          </ul>
     <div class="d-flex align-items-end">
     <% if user_signed_in? %>
-      <div class="p-2">マイページ</div>
+      <div class="p-2"><%= link_to my_page_path do %>マイページ
+      <% end %></div>
 
     <% elsif admin_signed_in? %>
 
