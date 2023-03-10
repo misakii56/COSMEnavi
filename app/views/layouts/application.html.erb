@@ -23,7 +23,9 @@
     <% if user_signed_in? %>
       <div class="p-2"><%= link_to my_page_path do %>マイページ
       <% end %></div>
-
+      
+      <div class="p-2"><%= link_to destroy_user_session_path, method: :delete do %>ログアウト
+      <% end %></div>
     <% elsif admin_signed_in? %>
 
      <div class="p-2"><%= link_to admin_skin_types_path do %>肌タイプ一覧
