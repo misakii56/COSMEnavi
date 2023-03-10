@@ -1,2 +1,15 @@
-<h1>Public::Cosmetics#show</h1>
-<p>Find me in app/views/public/cosmetics/show.html.erb</p>
+  <div class="container">
+  <div class="row">
+    <div class="col-12">
+       <% if @cosmetic.image.attached? %>
+       <%= image_tag @cosmetic.image, size: "150x150" %>
+      <% else %>
+    <%= image_tag 'default_image', size: "150x150" %>
+      <% end %>
+          <td><%= @cosmetic.name %></td>
+          <td><%= @cosmetic.color %></td>
+          <td><%= @cosmetic.brand %></td>
+          </div>
+          <p>　レビューを投稿する</p>
+          </div>
+          </div>
