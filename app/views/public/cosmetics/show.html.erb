@@ -2,27 +2,37 @@
   <div class="row">
     <div class="col-12">
       <div class="text-center">
-       <% if @cosmetic.image.attached? %>
-       <%= image_tag @cosmetic.image, size: "150x150" %>
-      <% else %>
-    <%= image_tag 'default_image', size: "150x150" %>
-      <% end %>
+        <% if @cosmetic.image.attached? %>
+        <%= image_tag @cosmetic.image, size: "150x150" %>
+        <% else %>
+        <%= image_tag 'default_image', size: "150x150" %>
+        <% end %>
       </div>
-       <div class="text-center">
+      <div class="text-center">
           <td><%= @cosmetic.brand %></td>
-        <div class="text-center">
+       </div>
+       <div class="text-center">
           <td><%= @cosmetic.name %></td>
           <td><%= @cosmetic.color %></td>
-          </div>
+       </div>
+          <div class="text-center">
            <p><%= link_to "レビューする", new_cosmetic_review_path(@cosmetic.id), class:"btn btn-primary" %></p>
           </div>
           </div>
-      <div class="row">
+          </div>
+        <div class="row">
           <div class="col-12">
               <div class="text-center">
-            <% @reviews.each do |review| %>
-            <td><%= review.review %></td>
-            <% end %>
-        
-      </div>
+                <% @reviews.each do |review| %>
+                  <td><%= review.review %></td>
+                <% end %>
+              </div>
           </div>
+      </div>
+      </div>
+
+
+
+     </div>
+         </div>
+           </div>
