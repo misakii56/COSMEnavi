@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
  scope module: :public do
    resources :cosmetics
+   resources :reviews
     get 'users/show' => 'users#show', as: 'my_page'
-    get 'users/edit' => 'customers#edit'
-    get 'users/confirm' => 'customers#confirm', as: 'confirm'
+    get 'users/edit' => 'users#edit'
+    get 'users/confirm' => 'users#confirm', as: 'confirm'
     patch 'users' => 'users#update'
     patch 'users/out' => 'users#out', as: 'out'
   end
