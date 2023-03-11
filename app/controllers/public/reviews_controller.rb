@@ -1,16 +1,17 @@
 class Public::ReviewsController < ApplicationController
-  
+
   def new
+     @cosmetic = Cosmetic.find(params[:cosmetic_id])
      @review = Review.new
   end
-  
+
   def create
-     @cosmetic = Cosmetic.find(params[:id])
+     @cosmetic = Cosmetic.find(params[:cosmetic_id])
      @review = Review.new(review_params)
      @review.user_id = current_user.id
      @review.cosmetic_id = @cosmetic.id
      @review.save
-     redirect_to cosmetic_path(cosmetic_id)
+     redirect_to cosmetic_path(@cosmetic.id)
   end
 
   def show
@@ -23,7 +24,7 @@ class Public::ReviewsController < ApplicationController
   def edit
      @review = Review.find(params[:id])
   end
-  
+
   def update
     @review = Review.find(params[:id])
     @review.update(review_params)
@@ -32,10 +33,10 @@ class Public::ReviewsController < ApplicationController
 
   def destroy
   end
-  
+
       private
   def review_params
     params.require(:review).permit(:user_id, :cosmetic_id, :review, :rate)
   end
-  
+
 end

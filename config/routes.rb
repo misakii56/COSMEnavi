@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
  scope module: :public do
-   resources :cosmetics
+   resources :cosmetics do
    resources :reviews
+   end
     get 'users/show' => 'users#show', as: 'my_page'
     get 'users/edit' => 'users#edit'
     get 'users/confirm' => 'users#confirm', as: 'confirm'

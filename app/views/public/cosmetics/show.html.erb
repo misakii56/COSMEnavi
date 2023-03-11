@@ -14,7 +14,15 @@
           <td><%= @cosmetic.name %></td>
           <td><%= @cosmetic.color %></td>
           </div>
-           <p><%= link_to "レビューする", new_review_path, class:"btn btn-primary" %></p>
+           <p><%= link_to "レビューする", new_cosmetic_review_path(@cosmetic.id), class:"btn btn-primary" %></p>
           </div>
           </div>
+      <div class="row">
+          <div class="col-12">
+              <div class="text-center">
+            <% @reviews.each do |review| %>
+            <td><%= review.review %></td>
+            <% end %>
+        
+      </div>
           </div>

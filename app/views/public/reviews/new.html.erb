@@ -4,8 +4,9 @@
         <div class="badge badge-light">レビューを投稿する</div>
       <div class="text-center">
           
-        <%= form_with model: @review, url:cosmetics_path do |f| %>
+        <%= form_with model: @review, url: cosmetic_reviews_path(@cosmetic.id) do |f| %>
         <%= f.text_area :review %>
+      
         <%= f.submit '投稿', class:"btn btn-primary" %>
         <% end %>
         </div>

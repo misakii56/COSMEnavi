@@ -23,14 +23,14 @@
   <div class="d-flex justify-content-center">
   <div class="field">
     <%= f.label :skin_type, "肌タイプ" %><br />
-    <%= f.collection_select :skin_type, SkinType.all, :id, :type_name, {prompt: "選択してください"} %>
+    <%= f.collection_select :skin_type_id, SkinType.all, :id, :type_name, {prompt: "選択してください"} %>
   </div>
   </div>
 
   <div class="d-flex justify-content-center">
   <div class="field">
     <%= f.label :parsonal_color, "パーソナルカラー" %><br />
-    <%= f.collection_select :parsonal_color, ParsonalColor.all, :id, :color_name, {prompt: "選択してください"} %>
+    <%= f.collection_select :parsonal_color_id, ParsonalColor.all, :id, :color_name, {prompt: "選択してください"} %>
   </div>
   </div>
 

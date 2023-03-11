@@ -1,4 +1,12 @@
-<p><%= @user.nickname %></p>
-<p><%= @user.skin_type %></p>
-<p><%= @user.parsonal_color %></p>
-<p><%= link_to "登録情報編集", users_edit_path, class:"btn btn-primary" %></p></p>
+  <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="badge badge-light">My Profile</div>
+        <p><%= @user.nickname %></p>
+        <p><%= @skin_type.type_name %></p>
+        <p><%= @parsonal_color.color_name %></p>
+        <p><%= @user.introduction %></p>
+        <p><%= link_to "登録情報編集", users_edit_path, class:"btn btn-primary" %></p>
+        </div>
+        </div>
+        </div>
