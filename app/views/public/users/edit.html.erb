@@ -7,6 +7,11 @@
         <p>ニックネーム</p>
         <p><%= f.text_field :nickname %></p>
         
+        
+          <div class="field">
+    <%= f.label :birth_date, "生年月日" %><br />
+    <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1923, end_year: (Time.now.year), default: Date.new(1989,1,1) %>
+  </div>
          <div class="field">
           <%= f.label :skin_type, "肌タイプ" %><br />
           <%= f.collection_select :skin_type_id, SkinType.all, :id, :type_name, {prompt: "選択してください"} %>
@@ -22,8 +27,9 @@
             
             <p>自己紹介文</p>
             <p><%= f.text_area :introduction %></p>
-            <%= f.submit '編集内容を保存', class:"btn btn-primary" %>
+            <%= f.submit '編集内容を保存', class:"btn btn-primary" %>       <%= link_to "退会︎", confirm_path, class:"btn btn-danger" %>
             <% end %>
+            
          </div>
          </div>
          </div>

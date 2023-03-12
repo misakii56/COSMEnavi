@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   
   namespace :admin do
+    resources :users
     resources :skin_types
     resources :parsonal_colors
     resources :cosmetics

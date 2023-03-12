@@ -1,2 +1,29 @@
-<h1>Public::Reviews#show</h1>
-<p>Find me in app/views/public/reviews/show.html.erb</p>
+<div class="container">
+  <%#= @review.inspect %>
+
+  <% if @review.user_id == current_user.id %>
+    <p><%= link_to "編集", edit_cosmetic_review_path, class:"btn btn-primary" %></p>
+  <% end %>
+
+  <div>
+    <%= @review.user.nickname %>
+  </div>
+
+  <div>
+    <div id="rate"></div>
+  </div>
+
+  <script>
+    document.getElementById('rate').innerHTML = '';
+    raty(document.getElementById('rate'), {
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+        starHalf: "<%= asset_path('star-half.png') %>",
+        score: <%= @review.rate %>,
+        readOnly: true,
+      });
+  </script>
+    <div>
+      <%= @review.review %>
+    </div>
+</div>

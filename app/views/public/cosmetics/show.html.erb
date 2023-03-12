@@ -20,19 +20,38 @@
           </div>
           </div>
           </div>
-        <div class="row">
-          <div class="col-12">
-              <div class="text-center">
-                <% @reviews.each do |review| %>
-                  <td><%= review.review %></td>
-                <% end %>
-              </div>
-          </div>
-      </div>
-      </div>
 
-
-
-     </div>
-         </div>
-           </div>
+  <div class="row">
+    <div class="col-8">
+  <table class="table table-borderless">
+  <thead>
+    <tr>
+      <th>評価</th>
+      <th>レビュー</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td>
+          <div id="rate_<%= review.id %>"></div>
+        </td>
+        <td><%= review.review %></td>
+        <td><%= link_to "➡︎", cosmetic_review_path(@cosmetic, review.id), class:"btn btn-primary" %></td>
+      </tr>
+      <script>
+        document.getElementById('rate_<%= review.id %>').innerHTML = '';
+        raty(document.getElementById('rate_<%= review.id %>'), {
+            starOn: "<%= asset_path('star-on.png') %>",
+            starOff: "<%= asset_path('star-off.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            score: <%= review.rate %>,
+            readOnly: true,
+          });
+      </script>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>

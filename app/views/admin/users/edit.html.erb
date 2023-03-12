@@ -1,0 +1,42 @@
+<div class="badge badge-light"><%= @user.nickname %>さんの会員情報編集</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+
+      <p>会員ID</p>
+      <p><%= @user.id %></p>
+      <%= form_with model: @user, url:admin_user_path(@user.id) do |f| %>
+      <p>ニックネーム</p>
+      <%= f.text_field :nickname %>
+      
+        <div class="field">
+    <%= f.label :birth_date, "生年月日" %><br />
+    <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1923, end_year: (Time.now.year), default: Date.new(1989,1,1) %>
+  </div>
+               <div class="field">
+          <%= f.label :skin_type, "肌タイプ" %><br />
+          <%= f.collection_select :skin_type_id, SkinType.all, :id, :type_name, {prompt: "選択してください"} %>
+         </div>
+  
+            <div class="field">
+            <%= f.label :parsonal_color, "パーソナルカラー" %><br />
+            <%= f.collection_select :parsonal_color_id, ParsonalColor.all, :id, :color_name, {prompt: "選択してください"} %>
+            </div>
+      
+      
+      
+      <p>メールアドレス</p>
+      <%= f.text_field :email %>
+      <p>会員ステータス</p>
+
+      <%= f.radio_button :is_deleted, false %>
+      <%= f.label :is_deleted, '有効' %>
+      <%= f.radio_button :is_deleted, true %>
+      <%= f.label :is_deleted, '退会' %>
+
+      <%= f.submit '変更を保存', class:"btn btn-primary" %>
+      <% end %>
+      </div>
+      </div>
+      </div>

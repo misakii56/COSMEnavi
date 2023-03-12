@@ -9,6 +9,7 @@ class Public::CosmeticsController < ApplicationController
   def show
      @cosmetic = Cosmetic.find(params[:id])
      @reviews = @cosmetic.reviews
+     @review = Review.find(params[:id])
   end
   
        private

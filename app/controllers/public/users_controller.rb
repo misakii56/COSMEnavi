@@ -20,10 +20,14 @@ class Public::UsersController < ApplicationController
   end
 
   def out
+    @user = current_user
+    @user.update(is_deleted: true)
+    reset_session
+    redirect_to new_user_registration_path
   end
 
        private
   def user_params
-    params.require(:user).permit(:nickname, :parsonal_color_id, :skin_type_id, :introduction, :email)
+    params.require(:user).permit(:nickname, :parsonal_color_id, :skin_type_id, :introduction, :email, :is_deleted, :birth_date)
   end
 end
