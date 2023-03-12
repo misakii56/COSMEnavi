@@ -4,7 +4,12 @@
  
 
   <div>
-    <%= @review.user.nickname %>
+      <% if @review.user.profile_image.attached? %>
+      <%= image_tag @review.user.profile_image, size: "50x50" %>
+      <% else %>
+      <%= image_tag 'no_image', size: "50x50" %>
+      <% end %>
+      <%= @review.user.nickname %>
   </div>
 
   <div>

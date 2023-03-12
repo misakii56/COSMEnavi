@@ -2,6 +2,7 @@ class User < ApplicationRecord
   belongs_to :skin_type
   belongs_to :parsonal_color
   has_many :reviews
+  has_one_attached :profile_image
  def active_for_authentication?
     super && (is_deleted == false)
  end

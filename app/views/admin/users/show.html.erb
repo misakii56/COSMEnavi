@@ -14,7 +14,7 @@
     <div class="col-md-6">
       <div><%= @user.id %></div>
       <div><%= @user.nickname %></div>
-     
+      <div><%= @user.birth_date.strftime('%Y年%m月%d日') %></div>
       <div><%= @skin_type.type_name %></div>
       <div><%= @parsonal_color.color_name %></div>
       <div><%= @user.email %></div>

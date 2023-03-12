@@ -1,7 +1,13 @@
   <div class="container">
   <div class="row">
+     <div class="badge badge-light">My Profile</div>
     <div class="col-12">
-      <div class="badge badge-light">My Profile</div>
+     
+      <% if @user.profile_image.attached? %>
+      <%= image_tag @user.profile_image, size: "100x100" %>
+      <% else %>
+      <%= image_tag 'no_image', size: "100x100" %>
+      <% end %>
         <p><%= @user.nickname %></p>
         <p><%= @skin_type.type_name %></p>
         <p><%= @parsonal_color.color_name %></p>
