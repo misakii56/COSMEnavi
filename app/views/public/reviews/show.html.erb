@@ -1,9 +1,7 @@
 <div class="container">
   <%#= @review.inspect %>
 
-  <% if @review.user_id == current_user.id %>
-    <p><%= link_to "編集", edit_cosmetic_review_path, class:"btn btn-primary" %></p>
-  <% end %>
+ 
 
   <div>
     <%= @review.user.nickname %>
@@ -26,4 +24,8 @@
     <div>
       <%= @review.review %>
     </div>
+    
+    <% if @review.user_id == current_user.id %>
+    <p><%= link_to "編集", edit_cosmetic_review_path, class:"btn btn-primary" %></p>
+    <% end %>
 </div>

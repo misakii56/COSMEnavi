@@ -29,10 +29,13 @@ class Public::ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     @review.update(review_params)
-    redirect_to review_path(@review.id)
+    redirect_to cosmetic_review_path(@review.id)
   end
 
   def destroy
+    review = current_user.reviews.find(params[:id])  # データ（レコード）を1件取得
+    review.destroy
+    redirect_to cosmetics_path
   end
 
       private

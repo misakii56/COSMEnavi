@@ -1,2 +1,25 @@
-<h1>Public::Reviews#edit</h1>
-<p>Find me in app/views/public/reviews/edit.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+          <div class="badge badge-light">レビューを編集する</div>
+
+<%= form_with model: @review, url: cosmetic_review_path(@review.id) do |f| %>
+    <div id="post_raty"></div>
+    <%= f.text_area :review %>
+
+    <%= f.submit '変更を保存', class:"btn btn-primary" %>
+    <% end %>
+    <p><%= link_to "レビューを削除する", cosmetic_review_path(@review.id), method: :delete, class:"btn btn-danger" %></p>
+<script>
+  var elem = document.getElementById('post_raty');
+  var opt = {
+      starOn: "<%= asset_path('star-on.png') %>",
+      starOff: "<%= asset_path('star-off.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      scoreName: "review[rate]",
+    };
+  raty(elem,opt);
+</script>
+</div>
+</div>
+</div>

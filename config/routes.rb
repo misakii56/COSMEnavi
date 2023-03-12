@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
  scope module: :public do
    resources :cosmetics do
    resources :reviews
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
     resources :skin_types
     resources :parsonal_colors
     resources :cosmetics
+    resources :reviews
   end
  # 顧客用
 # URL /customers/sign_in ...
