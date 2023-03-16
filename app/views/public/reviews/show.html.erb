@@ -33,4 +33,9 @@
     <% if @review.user_id == current_user.id %>
     <p><%= link_to "編集", edit_cosmetic_review_path, class:"btn btn-primary" %></p>
     <% end %>
-</div>
+    
+    <%= form_with model: @comment,url:cosmetic_review_path do |f| %>
+    <%= f.text_area :comment %>
+    <%= f.submit 'コメントする', class:"btn btn-primary" %>
+    <% end %>
+    </div>
