@@ -4,4 +4,5 @@
       <% end %></div>
        <div class="p-2"><%= link_to  new_user_session_path do %>ログイン
       <% end %></div>
+      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %>
       </div>
