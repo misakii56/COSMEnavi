@@ -7,9 +7,19 @@ class Public::CommentsController < ApplicationController
   end
 
   def edit
+      @comment = Comment.find(params[:id])
+  end
+  
+  def update
+    comment = Comment.find(params[:id])
+    comment.update(comment_params)
+    redirect_to cosmetic_review_path(comment.review.cosmetic, comment.review)
   end
 
   def destroy
+    comment = current_user.comments.find(params[:id])  # データ（レコード）を1件取得
+    comment.destroy
+    redirect_to cosmetic_review_path(comment.review.cosmetic, comment.review)
   end
 
    private
