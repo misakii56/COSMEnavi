@@ -18,7 +18,16 @@ class Public::ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @comment = Comment.new
     @comments = Comment.all
-
+  end
+  
+  def search
+    if params[:keyword].present?
+      @reviews = Review.where('review LIKE ?', "%#{params[:keyword]}%")
+      @keyword = params[:keyword]
+      @review = Review.find(params[:id])
+    else
+      @reviews = Review.all
+    end
   end
 
   def index

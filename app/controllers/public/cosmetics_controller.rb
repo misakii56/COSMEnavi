@@ -9,7 +9,15 @@ class Public::CosmeticsController < ApplicationController
   def show
      @cosmetic = Cosmetic.find(params[:id])
      @reviews = @cosmetic.reviews
-    
+  end
+  
+  def search
+    if params[:keyword].present?
+      @Cosmetics = Cosmetic.where('review LIKE ?', "%#{params[:keyword]}%")
+      @keyword = params[:keyword]
+    else
+      @cosmetics = Cosmetic.all
+    end
   end
   
        private
