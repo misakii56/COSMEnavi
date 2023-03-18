@@ -5,9 +5,9 @@ root to: 'public/homes#top'
 
  scope module: :public do
    resources :cosmetics do
-   resources :reviews do
-   resources :comments
- end
+     resources :reviews do
+      resources :comments
+     end
    end
     get 'users/show' => 'users#show', as: 'my_page'
     get 'users/edit' => 'users#edit'

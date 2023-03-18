@@ -1,7 +1,7 @@
 <div class="container">
   <%#= @review.inspect %>
 
- 
+
 
   <div>
       <% if @review.user.profile_image.attached? %>
@@ -29,13 +29,27 @@
     <div>
       <%= @review.review %>
     </div>
-    
+
     <% if @review.user_id == current_user.id %>
     <p><%= link_to "編集", edit_cosmetic_review_path, class:"btn btn-primary" %></p>
     <% end %>
-    
-    <%= form_with model: @comment,url: cosmetic_reviews_path do |f| %>
+
+    <%= form_with model: @comment,url: cosmetic_review_comments_path(@review.cosmetic,@review) do |f| %>
     <%= f.text_area :comment %>
     <%= f.submit 'コメントする', class:"btn btn-primary" %>
     <% end %>
     </div>
+
+
+
+    <% @review.comments.each do |comment|%>
+      <% if @review.user.profile_image.attached? %>
+      <%= image_tag @review.user.profile_image, size: "30x30" %>
+      <% else %>
+      <%= image_tag 'no_image', size: "30x30" %>
+      <% end %>
+          <%= comment.user.nickname %>
+            <%= comment.comment%>
+             
+      
+          <%end%>
