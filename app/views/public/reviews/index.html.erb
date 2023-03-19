@@ -1,2 +1,9 @@
-<h1>Public::Reviews#index</h1>
-<p>Find me in app/views/public/reviews/index.html.erb</p>
+  <h2>検索結果 "<%= @keyword %>"</h2>
+              <ul>
+                <% @cosmetics.each do |cosmetic| %>
+                   <%= cosmetic.brand %>
+                   <%= cosmetic.name %>
+                   <%= cosmetic.color %>
+
+                <% end %>
+              </ul>

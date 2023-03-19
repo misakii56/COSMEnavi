@@ -5,11 +5,11 @@ root to: 'public/homes#top'
 
  scope module: :public do
    resources :cosmetics do
+      collection do
+        get 'search'
+      end
      resources :reviews do
       resources :comments
-        collection do
-        get 'search'
-        end
      end
    end
     get 'users/show' => 'users#show', as: 'my_page'
