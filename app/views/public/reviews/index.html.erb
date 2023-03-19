@@ -1,9 +1,20 @@
-  <h2>検索結果 "<%= @keyword %>"</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+          <h4>検索結果 "<%= @keyword %>"</h4>
               <ul>
-                <% @cosmetics.each do |cosmetic| %>
-                   <%= cosmetic.brand %>
-                   <%= cosmetic.name %>
-                   <%= cosmetic.color %>
-
-                <% end %>
+                <table class="table">
+                  <tbody>
+                    <% @cosmetics.each do |cosmetic| %>
+                       <tr>
+                         <td><%= cosmetic.brand %></td>
+                         <td><%= link_to cosmetic.name, cosmetic_path(cosmetic.id) %></td>
+                         <td><%= cosmetic.color %></td>
+                       </tr>
+                      <% end %>
+                  </tbody>
+                </table>
               </ul>
+      </div>
+    </div>
+  </div>

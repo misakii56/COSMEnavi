@@ -14,7 +14,8 @@ class Public::CosmeticsController < ApplicationController
   def search
     if params[:keyword].present?
       @cosmetics = Cosmetic.where('name LIKE ?', "%#{params[:keyword]}%").
-         or(Cosmetic.where("brand LIKE ?", "%#{params[:keyword]}%"))
+         or(Cosmetic.where("brand LIKE ?", "%#{params[:keyword]}%")).
+         or(Cosmetic.where("color LIKE ?", "%#{params[:keyword]}%"))
       @keyword = params[:keyword]
 
       @user = current_user
@@ -27,7 +28,7 @@ class Public::CosmeticsController < ApplicationController
     end
   end
 
-       private
+private
   def review_params
     params.require(:review).permit(:user_id, :cosmetic_id, :review, :rate)
   end
