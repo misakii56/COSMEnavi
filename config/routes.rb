@@ -4,14 +4,17 @@ root to: 'public/homes#top'
 
 
  scope module: :public do
+   get 'cosmetics/cezanne' => 'cosmetics#cezanne', as: 'cezanne'
+   get 'cosmetics/canmake' => 'cosmetics#canmake', as: 'canmake'
    resources :cosmetics do
       collection do
         get 'search'
       end
-     resources :reviews do
-      resources :comments
-     end
+         resources :reviews do
+         resources :comments
+       end
    end
+    
     get 'users/show' => 'users#show', as: 'my_page'
     get 'users/edit' => 'users#edit'
     get 'users/confirm' => 'users#confirm', as: 'confirm'

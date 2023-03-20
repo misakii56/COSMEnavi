@@ -1,0 +1,10 @@
+<div class="container">
+<h2>CANMAKE</h2>
+  <% @canmake.each do |c| %>
+    <div>
+      <%= link_to c.name, cosmetic_path(c.id)  %>
+      <%= c.brand %>
+      <%= c.color %>
+    </div>
+  <% end %>
+</div>

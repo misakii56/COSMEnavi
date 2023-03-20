@@ -27,7 +27,18 @@ class Public::CosmeticsController < ApplicationController
       @cosmetics = Cosmetic.all
     end
   end
-
+  
+  
+  def cezanne
+      @cosmetics = Cosmetic.all
+      @cezanne = Cosmetic.where(brand:"CEZANNE")
+  end 
+  
+  def canmake
+      @cosmetics = Cosmetic.all
+      @canmake = Cosmetic.where(brand:"CANMAKE")
+  end
+  
 private
   def review_params
     params.require(:review).permit(:user_id, :cosmetic_id, :review, :rate)

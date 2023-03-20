@@ -1,0 +1,10 @@
+<div class="container">
+<h2>CEZANNE</h2>
+  <% @cezanne.each do |c| %>
+    <div>
+      <%= link_to c.name, cosmetic_path(c.id)  %>
+      <%= c.brand %>
+      <%= c.color %>
+    </div>
+  <% end %>
+</div>
