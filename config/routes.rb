@@ -5,6 +5,7 @@ root to: 'public/homes#top'
 
  scope module: :public do
    get 'cosmetics/cezanne' => 'cosmetics#cezanne', as: 'cezanne'
+   get 'cosmetics/integrate' => 'cosmetics#integrate', as: 'integrate'
    get 'cosmetics/canmake' => 'cosmetics#canmake', as: 'canmake'
    get 'cosmetics/eyebrow' => 'cosmetics#eyebrow', as: 'eyebrow'
    get 'cosmetics/eyeliner' => 'cosmetics#eyeliner', as: 'eyeliner'

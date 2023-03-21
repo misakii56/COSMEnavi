@@ -7,8 +7,15 @@
                   <tbody>
                     <% @cosmetics.each do |cosmetic| %>
                        <tr>
+                         <td><%= link_to cosmetic_path(cosmetic.id) do %>
+                        <% if cosmetic.image.attached? %>
+                        <%= image_tag cosmetic.image, size: "50x50" %>
+                        <% else %>
+                        <%= image_tag 'no_image', size: "50x50" %>
+                        <% end %>
+                        <% end %></td>
                          <td><%= cosmetic.brand %></td>
-                         <td><%= link_to cosmetic.name, cosmetic_path(cosmetic.id) %></td>
+                         <td><%= cosmetic.name %></td>
                          <td><%= cosmetic.color %></td>
                        </tr>
                       <% end %>

@@ -27,28 +27,33 @@ class Public::CosmeticsController < ApplicationController
       @cosmetics = Cosmetic.all
     end
   end
-  
-  
+
+
   def cezanne
-      @cosmetics = Cosmetic.all
-      @cezanne = Cosmetic.where(brand:"CEZANNE")
-  end 
-  
+      @cosmetics = Cosmetic.all.where(brand:"CEZANNE").page(params[:page]).per(10)
+      @cezanne = Cosmetic.where(brand:"CEZANNE").page(params[:page]).per(10)
+  end
+
   def canmake
-      @cosmetics = Cosmetic.all
-      @canmake = Cosmetic.where(brand:"CANMAKE")
+      @cosmetics = Cosmetic.all.where(brand:"CANMAKE").page(params[:page]).per(10)
+      @canmake = Cosmetic.where(brand:"CANMAKE").page(params[:page]).per(10)
   end
   
+  def integrate
+      @cosmetics = Cosmetic.all.where(brand:"INTEGRATE").page(params[:page]).per(10)
+      @integrate = Cosmetic.where(brand:"INTEGRATE").page(params[:page]).per(10)
+  end
+
   def eyebrow
       @cosmetics = Cosmetic.all
       @eyebrow = Cosmetic.where('name LIKE ?', "%アイブロウ%")
   end
-  
+
   def eyeliner
       @cosmetics = Cosmetic.all
       @eyeliner = Cosmetic.where('name LIKE ?', "%ライナー%")
   end
-  
+
   def mascara
       @cosmetics = Cosmetic.all
       @mascara = Cosmetic.where('name LIKE ?', "%マスカラ%")
@@ -64,7 +69,7 @@ class Public::CosmeticsController < ApplicationController
   def base
       @cosmetics = Cosmetic.all
       @base = Cosmetic.where('name LIKE ?', "%下地%")
-  end 
+  end
   def cheek
       @cosmetics = Cosmetic.all
       @cheek = Cosmetic.where('name LIKE ?', "%チーク%")

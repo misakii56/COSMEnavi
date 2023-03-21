@@ -1,17 +1,17 @@
 <div class="container">
-<h2>CEZANNE</h2>
-  <% @cezanne.each do |c| %>
+<h2>INTEGRATE</h2>
+  <% @integrate.each do |i| %>
     <div>
-      <%= link_to cosmetic_path(c.id) do %>
-          <% if c.image.attached? %>
-          <%= image_tag c.image, size: "50x50" %>
+      <%= link_to cosmetic_path(i.id) do %>
+          <% if i.image.attached? %>
+          <%= image_tag i.image, size: "50x50" %>
           <% else %>
           <%= image_tag 'no_image', size: "50x50" %>
           <% end %>
           <% end %>
-      <%= c.name %>
-      <%= c.brand %>
-      <%= c.color %>
+      <%= i.name %>
+      <%= i.brand %>
+      <%= i.color %>
     </div>
   <% end %>
   <div class="d-flex justify-content-center">
