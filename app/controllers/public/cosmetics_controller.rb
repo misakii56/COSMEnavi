@@ -45,42 +45,42 @@ class Public::CosmeticsController < ApplicationController
   end
 
   def eyebrow
-      @cosmetics = Cosmetic.all
-      @eyebrow = Cosmetic.where('name LIKE ?', "%アイブロウ%")
+      @cosmetics = Cosmetic.all.where('name LIKE ?', "%アイブロウ%").page(params[:page]).per(10)
+      @eyebrow = Cosmetic.where('name LIKE ?', "%アイブロウ%").page(params[:page]).per(10)
   end
 
   def eyeliner
-      @cosmetics = Cosmetic.all
-      @eyeliner = Cosmetic.where('name LIKE ?', "%ライナー%")
+      @cosmetics = Cosmetic.all.where('name LIKE ?', "%ライナー%").page(params[:page]).per(10)
+      @eyeliner = Cosmetic.where('name LIKE ?', "%ライナー%").page(params[:page]).per(10)
   end
 
   def mascara
-      @cosmetics = Cosmetic.all
-      @mascara = Cosmetic.where('name LIKE ?', "%マスカラ%")
+      @cosmetics = Cosmetic.all.where('name LIKE ?', "%マスカラ%").page(params[:page]).per(10)
+      @mascara = Cosmetic.where('name LIKE ?', "%マスカラ%").page(params[:page]).per(10)
   end
   def eyeshadow
-      @cosmetics = Cosmetic.all
-      @eyeshadow = Cosmetic.where('name LIKE ?', "%アイシャドウ%")
+      @cosmetics = Cosmetic.all.where('name LIKE ?', "%アイシャドウ%").page(params[:page]).per(10)
+      @eyeshadow = Cosmetic.where('name LIKE ?', "%アイシャドウ%").page(params[:page]).per(10)
   end
   def lip
-      @cosmetics = Cosmetic.all
-      @lip = Cosmetic.where('name LIKE ?', "%リップ%")
+      @cosmetics = Cosmetic.all.where('name LIKE ?', "%リップ%").page(params[:page]).per(10)
+      @lip = Cosmetic.where('name LIKE ?', "%リップ%").page(params[:page]).per(10)
   end
   def base
-      @cosmetics = Cosmetic.all
-      @base = Cosmetic.where('name LIKE ?', "%下地%")
+      @cosmetics = Cosmetic.all.where('name LIKE ?', "%下地%").page(params[:page]).per(10)
+      @base = Cosmetic.where('name LIKE ?', "%下地%").page(params[:page]).per(10)
   end
   def cheek
-      @cosmetics = Cosmetic.all
-      @cheek = Cosmetic.where('name LIKE ?', "%チーク%")
+      @cosmetics = Cosmetic.all.where('name LIKE ?', "%チーク%").page(params[:page]).per(10)
+      @cheek = Cosmetic.where('name LIKE ?', "%チーク%").page(params[:page]).per(10)
   end
   def foundation
-     @cosmetics = Cosmetic.all
-     @foundation = Cosmetic.where('name LIKE ?', "%ファンデーション%")
+     @cosmetics = Cosmetic.all.where('name LIKE ?', "%ファンデーション%").page(params[:page]).per(10)
+     @foundation = Cosmetic.where('name LIKE ?', "%ファンデーション%").page(params[:page]).per(10)
   end
   def powder
-     @cosmetics = Cosmetic.all
-     @powder = Cosmetic.where('name LIKE ?', "%パウダー%")
+     @cosmetics = Cosmetic.all.where('name LIKE ?', "%パウダー%").page(params[:page]).per(10)
+     @powder = Cosmetic.where('name LIKE ?', "%パウダー%").page(params[:page]).per(10)
   end
 private
   def review_params
