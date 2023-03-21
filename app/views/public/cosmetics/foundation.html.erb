@@ -1,0 +1,10 @@
+<div class="container">
+<h2>ファンデーション</h2>
+  <% @foundation.each do |f| %>
+    <div>
+      <%= link_to f.name, cosmetic_path(f.id)  %>
+      <%= f.brand %>
+      <%= f.color %>
+    </div>
+  <% end %>
+</div>

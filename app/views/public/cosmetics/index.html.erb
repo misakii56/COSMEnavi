@@ -1,7 +1,7 @@
 <div class="container">
       <div class="badge badge-light">すべての化粧品</div>
   <div class="row">
-    
+
 <div class="text-center">
           <% @cosmetics.each do |cosmetic| %>
           　<%= link_to cosmetic_path(cosmetic.id) do %>
@@ -19,6 +19,15 @@
     </div>
     <%= link_to "CEZANNE", cezanne_path %>
     <%= link_to "CANMAKE", canmake_path %>
+    <%= link_to "アイブロウ", eyebrow_path %>
+    <%= link_to "アイライナー", eyeliner_path %>
+    <%= link_to "マスカラ", mascara_path %>
+    <%= link_to "アイシャドウ", eyeshadow_path %>
+    <%= link_to "リップ", lip_path %>
+    <%= link_to "化粧下地", base_path %>
+    <%= link_to "チーク", cheek_path %>
+    <%= link_to "ファンデーション", foundation_path %>
+    <%= link_to "パウダー", powder_path %>
     </div>
     </div>
     <div class="d-flex justify-content-center">

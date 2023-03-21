@@ -1,0 +1,10 @@
+<div class="container">
+<h2>リップ</h2>
+  <% @lip.each do |l| %>
+    <div>
+      <%= link_to l.name, cosmetic_path(l.id)  %>
+      <%= l.brand %>
+      <%= l.color %>
+    </div>
+  <% end %>
+</div>

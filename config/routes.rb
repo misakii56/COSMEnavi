@@ -6,6 +6,15 @@ root to: 'public/homes#top'
  scope module: :public do
    get 'cosmetics/cezanne' => 'cosmetics#cezanne', as: 'cezanne'
    get 'cosmetics/canmake' => 'cosmetics#canmake', as: 'canmake'
+   get 'cosmetics/eyebrow' => 'cosmetics#eyebrow', as: 'eyebrow'
+   get 'cosmetics/eyeliner' => 'cosmetics#eyeliner', as: 'eyeliner'
+   get 'cosmetics/mascara' => 'cosmetics#mascara', as: 'mascara'
+   get 'cosmetics/eyeshadow' => 'cosmetics#eyeshadow', as: 'eyeshadow'
+   get 'cosmetics/lip' => 'cosmetics#lip', as: 'lip'
+   get 'cosmetics/base' => 'cosmetics#base', as: 'base'
+   get 'cosmetics/cheek' => 'cosmetics#cheek', as: 'cheek'
+   get 'cosmetics/foundation' => 'cosmetics#foundation', as: 'foundation'
+   get 'cosmetics/powder' => 'cosmetics#powder', as: 'powder'
    resources :cosmetics do
       collection do
         get 'search'

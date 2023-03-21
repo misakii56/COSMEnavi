@@ -1,0 +1,10 @@
+<div class="container">
+<h2>化粧下地</h2>
+  <% @base.each do |b| %>
+    <div>
+      <%= link_to b.name, cosmetic_path(b.id)  %>
+      <%= b.brand %>
+      <%= b.color %>
+    </div>
+  <% end %>
+</div>

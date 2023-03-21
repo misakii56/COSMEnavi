@@ -1,0 +1,10 @@
+<div class="container">
+<h2>アイブロウ</h2>
+  <% @eyebrow.each do |e| %>
+    <div>
+      <%= link_to e.name, cosmetic_path(e.id)  %>
+      <%= e.brand %>
+      <%= e.color %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+<h2>パウダー</h2>
+  <% @powder.each do |po| %>
+    <div>
+      <%= link_to po.name, cosmetic_path(po.id)  %>
+      <%= po.brand %>
+      <%= po.color %>
+    </div>
+  <% end %>
+</div>
