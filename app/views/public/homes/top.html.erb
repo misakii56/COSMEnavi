@@ -1,8 +1,12 @@
+     <%= stylesheet_link_tag "home", :media => "all" %>
+     
+
      <div class="text-center">
-       <h3>COSMEnavi</h3>
-     <div class="p-2"><%= link_to new_user_registration_path do %>新規登録
+      <%= image_tag 'logo.png', size: "400x200" %>
+     <div class="signup"><%= link_to new_user_registration_path do %>新規登録
       <% end %></div>
-       <div class="p-2"><%= link_to  new_user_session_path do %>ログイン
+       <div class="signup"><%= link_to  new_user_session_path do %>ログイン
       <% end %></div>
-      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %>
+      <div class="signup"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %>
+      </div>
       </div>
