@@ -2,7 +2,14 @@
 <h2>リップ</h2>
   <% @lip.each do |l| %>
     <div>
-      <%= link_to l.name, cosmetic_path(l.id)  %>
+      <%= link_to cosmetic_path(l.id) do %>
+          <% if l.image.attached? %>
+          <%= image_tag l.image, size: "50x50" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+          <% end %>
+      <%= l.name %>
       <%= l.brand %>
       <%= l.color %>
     </div>

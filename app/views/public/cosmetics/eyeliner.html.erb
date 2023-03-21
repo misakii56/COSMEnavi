@@ -2,7 +2,14 @@
 <h2>アイライナー</h2>
   <% @eyeliner.each do |e| %>
     <div>
-      <%= link_to e.name, cosmetic_path(e.id)  %>
+      <%= link_to cosmetic_path(e.id) do %>
+          <% if e.image.attached? %>
+          <%= image_tag e.image, size: "50x50" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+          <% end %>
+      <%= e.name %>
       <%= e.brand %>
       <%= e.color %>
     </div>

@@ -2,7 +2,14 @@
 <h2>チーク</h2>
   <% @cheek.each do |c| %>
     <div>
-      <%= link_to c.name, cosmetic_path(c.id)  %>
+      <%= link_to cosmetic_path(c.id) do %>
+          <% if c.image.attached? %>
+          <%= image_tag c.image, size: "50x50" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+          <% end %>
+      <%= c.name %>
       <%= c.brand %>
       <%= c.color %>
     </div>

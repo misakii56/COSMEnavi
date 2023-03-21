@@ -2,7 +2,14 @@
 <h2>ファンデーション</h2>
   <% @foundation.each do |f| %>
     <div>
-      <%= link_to f.name, cosmetic_path(f.id)  %>
+      <%= link_to cosmetic_path(f.id) do %>
+          <% if f.image.attached? %>
+          <%= image_tag f.image, size: "50x50" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+          <% end %>
+      <%= f.name  %>
       <%= f.brand %>
       <%= f.color %>
     </div>

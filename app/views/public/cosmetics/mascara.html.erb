@@ -2,7 +2,14 @@
 <h2>マスカラ</h2>
   <% @mascara.each do |m| %>
     <div>
-      <%= link_to m.name, cosmetic_path(m.id)  %>
+      <%= link_to cosmetic_path(m.id) do %>
+          <% if m.image.attached? %>
+          <%= image_tag m.image, size: "50x50" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+          <% end %>
+      <%= m.name %>
       <%= m.brand %>
       <%= m.color %>
     </div>

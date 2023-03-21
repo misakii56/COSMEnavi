@@ -2,7 +2,14 @@
 <h2>化粧下地</h2>
   <% @base.each do |b| %>
     <div>
-      <%= link_to b.name, cosmetic_path(b.id)  %>
+      <%= link_to cosmetic_path(b.id) do %>
+          <% if b.image.attached? %>
+          <%= image_tag b.image, size: "50x50" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+          <% end %>
+      <%= b.name %>
       <%= b.brand %>
       <%= b.color %>
     </div>

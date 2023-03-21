@@ -2,7 +2,14 @@
 <h2>パウダー</h2>
   <% @powder.each do |po| %>
     <div>
-      <%= link_to po.name, cosmetic_path(po.id)  %>
+      <%= link_to cosmetic_path(po.id) do %>
+          <% if po.image.attached? %>
+          <%= image_tag po.image, size: "50x50" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+          <% end %>
+      <%= po.name %>
       <%= po.brand %>
       <%= po.color %>
     </div>
