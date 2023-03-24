@@ -1,8 +1,9 @@
+  <%= stylesheet_link_tag "user", :media => "all" %>
   <div class="container">
+   
   <div class="row">
-     <div class="badge badge-light">My Profile</div>
-    <div class="col-12">
-
+    <div class="col-5">
+ <h4><span>My Profile</h4></span>
       <% if @user.profile_image.attached? %>
       <%= image_tag @user.profile_image, size: "100x100" %>
       <% else %>
@@ -13,14 +14,11 @@
         <p><%= @parsonal_color.color_name %></p>
         <p><%= @user.introduction %></p>
         <p><%= link_to "登録情報編集", users_edit_path, class:"btn btn-primary" %></p>
-        </div>
-        </div>
-        </div>
           <%= form_with url: search_cosmetics_path, local: true, method: :get do |form| %>
           <%= form.text_field :keyword %>
           <%= form.submit "検索" %>
           <% end %>
-          
+
         <%= link_to "CEZANNE", cezanne_path %>
         <%= link_to "CANMAKE", canmake_path %>
         <%= link_to "INTEGRATE", integrate_path %>
@@ -34,4 +32,6 @@
         <%= link_to "ファンデーション", foundation_path %>
         <%= link_to "パウダー", powder_path %>
 
-
+        </div>
+        </div>
+        </div>
