@@ -1,8 +1,35 @@
-.cosme {
-  font-size: 20px;
+
+.box {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
 }
-.box{
-      display: inline-block;
-      width:200px;
-      height:100px;
-    }
+
+.item {
+   display:flex;
+  flex-flow: column;
+  text-align: center;
+}
+.brand02 {
+  display: flex;
+  flex-flow: column;
+}
+.category02 {
+  display: flex;
+  flex-flow: column;
+}
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;    /*角を丸くする*/
+}

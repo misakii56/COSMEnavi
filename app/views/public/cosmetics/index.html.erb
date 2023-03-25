@@ -1,36 +1,52 @@
 <%= stylesheet_link_tag "cosmetic", :media => "all" %>
-<div class="container">
-     <div class="cosme">すべての化粧品</div>
-        <div class="row">
-
+     <h2>すべての化粧品</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
           <div class="box">
-                    <% @cosmetics.each do |cosmetic| %>
+             <div class="item">
+                     <% @cosmetics.each do |cosmetic| %>
+                      <div class="item02">
                       　<%= link_to cosmetic_path(cosmetic.id) do %>
                         <% if cosmetic.image.attached? %>
                         <%= image_tag cosmetic.image, size: "130x130" %>
                         <% else %>
                         <%= image_tag 'no_image', size: "130x130" %>
                         <% end %>
+                      </div>
                         <% end %>
-                      <td><%= cosmetic.name %></td>
-                      <td><%= cosmetic.color %></td>
-                      <td><%= cosmetic.brand %></td>
+                        
+                      <div class="item"><%= cosmetic.name %></div>
+                      <div class="item"><%= cosmetic.color %></div>
+                      <div class="item"><%= cosmetic.brand %></div>
                     <% end %>
-           </div>
-    <div class="d-flex justify-content-center">
-      <%= paginate @cosmetics %>
+             </div>
+          </div>
+          <div class="d-flex justify-content-center">
+              <%= paginate @cosmetics %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <div class="brand02">
+            <%= link_to "CEZANNE", cezanne_path %>
+            <%= link_to "CANMAKE", canmake_path %>
+            <%= link_to "INTEGRATE", integrate_path %>
+          </div>
+        </div>
+        <div class="col-10">
+          <div class="category02">
+            <%= link_to "アイブロウ", eyebrow_path %>
+            <%= link_to "アイライナー", eyeliner_path %>
+            <%= link_to "マスカラ", mascara_path %>
+            <%= link_to "アイシャドウ", eyeshadow_path %>
+            <%= link_to "リップ", lip_path %>
+            <%= link_to "化粧下地", base_path %>
+            <%= link_to "チーク", cheek_path %>
+            <%= link_to "ファンデーション", foundation_path %>
+            <%= link_to "パウダー", powder_path %>
+          </div>
+         </div>
+      </div>
     </div>
-        <%= link_to "CEZANNE", cezanne_path %>
-        <%= link_to "CANMAKE", canmake_path %>
-        <%= link_to "INTEGRATE", integrate_path %>
-        <%= link_to "アイブロウ", eyebrow_path %>
-        <%= link_to "アイライナー", eyeliner_path %>
-        <%= link_to "マスカラ", mascara_path %>
-        <%= link_to "アイシャドウ", eyeshadow_path %>
-        <%= link_to "リップ", lip_path %>
-        <%= link_to "化粧下地", base_path %>
-        <%= link_to "チーク", cheek_path %>
-        <%= link_to "ファンデーション", foundation_path %>
-        <%= link_to "パウダー", powder_path %>
-        </div>
-        </div>
