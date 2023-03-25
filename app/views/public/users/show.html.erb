@@ -5,11 +5,14 @@
       <div class="col-5">
         <div class="border">
          <h4><span>My Profile</h4></span>
-      <% if @user.profile_image.attached? %>
-      <%= image_tag @user.profile_image, size: "100x100" %>
-      <% else %>
-      <%= image_tag 'no_image', size: "100x100" %>
-      <% end %>
+      
+            <% if @user.profile_image.attached? %>
+            <div class="user">
+            <%= image_tag @user.profile_image, size: "100x100" %>
+            <% else %>
+            <%= image_tag 'no_image', size: "100x100" %>
+            <% end %>
+          </div>
     <div class="user"><%= @user.nickname %></div>
     <div class="user"><%= @skin_type.type_name %></div>
     <div class="user"><%= @parsonal_color.color_name %></div>

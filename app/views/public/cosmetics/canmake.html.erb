@@ -1,20 +1,27 @@
 <div class="container">
-  <h2><span>CANMAKE</span></h2>
-  <% @canmake.each do |c| %>
-    <div>
-      <%= link_to cosmetic_path(c.id) do %>
+  <h4><span>CANMAKE</span></h4>
+    <table class="table">
+      <tbody>
+        <% @canmake.each do |c| %>
+        <tr>
+        <td><%= link_to cosmetic_path(c.id) do %>
           <% if c.image.attached? %>
           <%= image_tag c.image, size: "50x50" %>
           <% else %>
           <%= image_tag 'no_image', size: "50x50" %>
           <% end %>
-          <% end %>
-      <%= c.name %>
-      <%= c.brand %>
-      <%= c.color %>
-    </div>
+          <% end %></td>
+      <td><%= c.name %></td>
+      <td><%= c.brand %></td>
+      <td><%= c.color %></td>
+    </tr>
   <% end %>
+  </tbody>
+  </table>
+  </ul>
 </div>
+
+
  <div class="d-flex justify-content-center">
 <%= paginate @cosmetics %>
 </div>

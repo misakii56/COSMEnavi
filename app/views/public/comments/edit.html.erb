@@ -1,12 +1,18 @@
  <div class="container">
     <div class="row">
-        <div class="col-10">
-          <div class="badge badge-light">コメントの編集</div>
-          <%= form_with model: @comment, url: cosmetic_review_comment_path(@comment.id) do |f| %>
-          <%= f.text_area :comment %>
-          <%= f.submit '変更を保存', class:"btn btn-primary" %>
-          <%= link_to "削除する", cosmetic_review_comment_path(@comment.id), method: :delete, class:"btn btn-danger" %>
-          <% end %>
+        <div class="col-12">
+          <h4><span>コメントの編集</span></h4>
+          <div class="new">
+              <%= form_with model: @comment, url: cosmetic_review_comment_path(@comment.id) do |f| %>
+              <div class="new01">
+                <%= f.text_area :comment %>
+              </div>
+              <div class="new01">
+                <%= f.submit '変更を保存', class:"btn btn-primary" %>
+                <%= link_to "削除", cosmetic_review_comment_path(@comment.id), method: :delete, class:"btn btn-danger" %>
+              </div>
+                <% end %>
+          </div>
         </div>
     </div>
  </div>
