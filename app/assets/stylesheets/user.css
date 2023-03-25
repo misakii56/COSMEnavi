@@ -85,3 +85,16 @@ h4 {
   justify-content: center;
   text-align:center;
 }
+
+.new {
+ text-align:center;
+ padding: 100px;
+}
+
+.new01 {
+  padding: 10px;
+}
+
+.comment {
+  font-size: 15px;
+}

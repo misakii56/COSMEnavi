@@ -1,58 +1,86 @@
 <div class="container">
   <%#= @review.inspect %>
+  <div class="row">
+    <div class="col-12">
 
 
+      <div class="new">
+          <% if @review.user.profile_image.attached? %>
+          <%= image_tag @review.user.profile_image, size: "50x50" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+      <div class="new01">
+          <%= @review.user.nickname %>
+      </div>
+      <div class="new01">
+        <div id="rate"></div>
+      </div>
 
-  <div>
-      <% if @review.user.profile_image.attached? %>
-      <%= image_tag @review.user.profile_image, size: "50x50" %>
-      <% else %>
-      <%= image_tag 'no_image', size: "50x50" %>
-      <% end %>
-      <%= @review.user.nickname %>
-  </div>
+      <script>
+        document.getElementById('rate').innerHTML = '';
+        raty(document.getElementById('rate'), {
+            starOn: "<%= asset_path('star-on.png') %>",
+            starOff: "<%= asset_path('star-off.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            score: <%= @review.rate %>,
+            readOnly: true,
+          });
+      </script>
+        <div class="new01">
+            <%= @review.review %>
+            <% if @review.user_id == current_user.id %>
+            <p><%= link_to "編集", edit_cosmetic_review_path, class:"btn btn-primary" %></p>
+            </div>
+            <% end %>
 
-  <div>
-    <div id="rate"></div>
-  </div>
 
-  <script>
-    document.getElementById('rate').innerHTML = '';
-    raty(document.getElementById('rate'), {
-        starOn: "<%= asset_path('star-on.png') %>",
-        starOff: "<%= asset_path('star-off.png') %>",
-        starHalf: "<%= asset_path('star-half.png') %>",
-        score: <%= @review.rate %>,
-        readOnly: true,
-      });
-  </script>
-    <div>
-      <%= @review.review %>
+        <%= form_with model: @comment,url: cosmetic_review_comments_path(@review.cosmetic,@review) do |f| %>
+        <div class="new01">
+          <%= f.text_area :comment %>
+        </div>
+        <div class="new01">
+          <%= f.submit 'コメントする', class:"btn btn-primary" %>
+        </div>
+        <% end %>
+      </div>
     </div>
-
-    <% if @review.user_id == current_user.id %>
-    <p><%= link_to "編集", edit_cosmetic_review_path, class:"btn btn-primary" %></p>
-    <% end %>
-
-    <%= form_with model: @comment,url: cosmetic_review_comments_path(@review.cosmetic,@review) do |f| %>
-    <%= f.text_area :comment %>
-    <%= f.submit 'コメントする', class:"btn btn-primary" %>
-    <% end %>
-    </div>
-
-
-
-    <% @review.comments.each do |comment|%>
-      <% if @review.user.profile_image.attached? %>
-      <%= image_tag @review.user.profile_image, size: "30x30" %>
-      <% else %>
-      <%= image_tag 'no_image', size: "30x30" %>
-      <% end %>
-          <%= comment.user.nickname %>
-            <%= comment.comment %>
-
-              <% if comment.user_id == current_user.id %>
-                <%= link_to "編集", edit_cosmetic_review_comment_path(review_id: @review.id, id: comment.id), class:"btn btn-primary" %>
+    <div class="col-6">
+      <h5>コメント</h5>
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr>
+            <% @review.comments.each do |comment|%>
+            <td>
+              <% if @review.user.profile_image.attached? %>
+              <%= image_tag @review.user.profile_image, size: "30x30" %>
+              <% else %>
+              <%= image_tag 'no_image', size: "30x30" %>
+            </td>
               <% end %>
-
-    <% end %>
+          <td>
+            <%= comment.user.nickname %>
+          </td>
+          <td>
+            <%= comment.comment %>
+          </td>
+            <% if comment.user_id == current_user.id %>
+          <td>
+            <%= link_to "編集", edit_cosmetic_review_comment_path(review_id: @review.id, id: comment.id), class:"btn btn-primary" %>
+          </td>
+            <% end %>
+        </tr>
+            <% end %>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
