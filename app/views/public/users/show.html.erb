@@ -1,27 +1,40 @@
   <%= stylesheet_link_tag "user", :media => "all" %>
   <div class="container">
    
-  <div class="row">
-    <div class="col-5">
- <h4><span>My Profile</h4></span>
+    <div class="row">
+      <div class="col-5">
+        <div class="border">
+         <h4><span>My Profile</h4></span>
       <% if @user.profile_image.attached? %>
       <%= image_tag @user.profile_image, size: "100x100" %>
       <% else %>
       <%= image_tag 'no_image', size: "100x100" %>
       <% end %>
-        <p><%= @user.nickname %></p>
-        <p><%= @skin_type.type_name %></p>
-        <p><%= @parsonal_color.color_name %></p>
-        <p><%= @user.introduction %></p>
-        <p><%= link_to "登録情報編集", users_edit_path, class:"btn btn-primary" %></p>
+    <div class="user"><%= @user.nickname %></div>
+    <div class="user"><%= @skin_type.type_name %></div>
+    <div class="user"><%= @parsonal_color.color_name %></div>
+    <div class="user"><%= @user.introduction %></div>
+    <div class="user"><%= link_to "登録情報編集", users_edit_path, class:"btn btn-primary" %></div>
+    </div>
+        </div>
+      <div class="search">
+        <h5>化粧品を検索する</h5>
+       
+
           <%= form_with url: search_cosmetics_path, local: true, method: :get do |form| %>
           <%= form.text_field :keyword %>
-          <%= form.submit "検索" %>
+          <%= form.submit "検索", class:"btn btn-primary" %>
           <% end %>
-
+      </div>
+      
+   <div class="select">ブランドから選ぶ</div>
+      <div class="brand">
         <%= link_to "CEZANNE", cezanne_path %>
         <%= link_to "CANMAKE", canmake_path %>
         <%= link_to "INTEGRATE", integrate_path %>
+      </div>
+   <div class="select02">カテゴリから選ぶ</div>
+      <div class="category">
         <%= link_to "アイブロウ", eyebrow_path %>
         <%= link_to "アイライナー", eyeliner_path %>
         <%= link_to "マスカラ", mascara_path %>
@@ -31,7 +44,7 @@
         <%= link_to "チーク", cheek_path %>
         <%= link_to "ファンデーション", foundation_path %>
         <%= link_to "パウダー", powder_path %>
-
+      </div>
         </div>
         </div>
         </div>

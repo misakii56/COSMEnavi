@@ -1,21 +1,55 @@
 h4 {
   position: relative;
-  padding: 0 65px;
   text-align: center;
+  font-size:2em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #6699FF;
+	text-shadow: 0.02em 0.02em 0.02em rgba(0,0,0,1);
 }
 
-h4:before {
-  position: absolute;
-  top: calc(50% - 1px);
-  left: 0;
-  width: 100%;
-  height: 2px;
-  content: '';
-  background: #000;
+
+.border {
+     display: block;
+     width: 350px;
+     height: 470px;
+     line-height: 60px;
+     text-align: center;
+     padding: 10px;
 }
 
-h4 span {
-  position: relative;
-  padding: 0 1em;
-  background: #fff;
+.search {
+  position: fixed;
+  top: 200px;
+  right: 350px;
 }
+
+.select {
+  position: fixed;
+  bottom: 250px;
+  right: 490px;
+}
+
+.brand {
+  display: flex;
+  flex-flow: column;
+  position: fixed;
+  bottom: 153px;
+  right: 500px;
+}
+
+.select02 {
+  position: fixed;
+  bottom: 250px;
+  right: 310px;
+}
+
+.category {
+  display: flex;
+  flex-flow: column;
+  position: fixed;
+  bottom: 10px;
+  right: 300px;
+}
+
