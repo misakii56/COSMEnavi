@@ -1,39 +1,36 @@
-  <div class="container">
+
+<div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="badge badge-light">登録情報編集</div>
-      <div class="text-center">
-        <%= form_with model: @user, url: users_path, method: :patch do |f| %>
-        <p>プロフィール画像</p>
-        <%= f.file_field :profile_image, accept: "image/*" %>
-        
-        <p>ニックネーム</p>
-        <p><%= f.text_field :nickname %></p>
-        
-        
-          <div class="field">
-    <%= f.label :birth_date, "生年月日" %><br />
-    <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1923, end_year: (Time.now.year), default: Date.new(1989,1,1) %>
+      <h2><span>登録情報編集</span></h2>
+      <div class="edit">
+            <%= form_with model: @user, url: users_path, method: :patch do |f| %>
+              <p>プロフィール画像</p>
+              <p><%= f.file_field :profile_image, accept: "image/*" %></p>
+              <p>ニックネーム</p>
+              <p><%= f.text_field :nickname %></p>
+
+                <div class="field">
+                    <%= f.label :birth_date, "生年月日" %><br />
+                    <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1923, end_year: (Time.now.year), default: Date.new(1989,1,1) %>
+                </div>
+                <div class="field">
+                    <%= f.label :skin_type, "肌タイプ" %><br />
+                    <%= f.collection_select :skin_type_id, SkinType.all, :id, :type_name, {prompt: "選択してください"} %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :parsonal_color, "パーソナルカラー" %><br />
+                    <%= f.collection_select :parsonal_color_id, ParsonalColor.all, :id, :color_name, {prompt: "選択してください"} %>
+                </div>
+
+                <p>メールアドレス</p>
+                <p><%= f.text_field :email %></p>
+                <p>自己紹介文</p>
+                <p><%= f.text_area :introduction %></p>
+                   <%= f.submit '編集内容を保存', class:"btn btn-primary" %>       <%= link_to "退会︎", confirm_path, class:"btn btn-danger" %>
+                   <% end %>
+      </div>
+    </div>
   </div>
-         <div class="field">
-          <%= f.label :skin_type, "肌タイプ" %><br />
-          <%= f.collection_select :skin_type_id, SkinType.all, :id, :type_name, {prompt: "選択してください"} %>
-         </div>
-  
-            <div class="field">
-            <%= f.label :parsonal_color, "パーソナルカラー" %><br />
-            <%= f.collection_select :parsonal_color_id, ParsonalColor.all, :id, :color_name, {prompt: "選択してください"} %>
-            </div>
-          
-            <p>メールアドレス</p>
-            <p><%= f.text_field :email %></p>
-            
-            <p>自己紹介文</p>
-            <p><%= f.text_area :introduction %></p>
-            <%= f.submit '編集内容を保存', class:"btn btn-primary" %>       <%= link_to "退会︎", confirm_path, class:"btn btn-danger" %>
-            <% end %>
-            
-         </div>
-         </div>
-         </div>
-         </div>
+</div>
