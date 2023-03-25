@@ -22,12 +22,15 @@
           </div>
 
   <div class="row">
-    <div class="col-8">
+    <div class="col-12">
   <table class="table table-borderless">
   <thead>
     <tr>
       <th>評価</th>
       <th>レビュー</th>
+      <th>肌タイプ</th>
+      <th>パーソナルカラー</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -37,7 +40,9 @@
           <div id="rate_<%= review.id %>"></div>
         </td>
         <td><%= review.review %></td>
-        <td><%= link_to "➡︎", cosmetic_review_path(@cosmetic, review.id), class:"btn btn-primary" %></td>
+           <td><%= review.user.skin_type.type_name %></td>
+           <td><%= review.user.parsonal_color.color_name %></td>
+           <td><%= link_to "➡︎", cosmetic_review_path(@cosmetic, review.id), class:"btn btn-primary" %></td>
       </tr>
       <script>
         document.getElementById('rate_<%= review.id %>').innerHTML = '';
