@@ -81,7 +81,6 @@ body {
 }
 
 .btn2,
-a.btn2,
 button.btn2 {
   font-size: 1rem;
   font-weight: 700;
@@ -104,13 +103,13 @@ button.btn2 {
   border-radius: 0.5rem;
 }
 
-a.btn-border-shadow {
+.btn-border-shadow {
   padding: calc(1.5rem - 12px) 3rem 1.5rem;
 
   background: #fff;
 }
 
-a.btn-border-shadow:before {
+.btn-border-shadow:before {
   position: absolute;
   top: -6px;
   left: -6px;
@@ -126,20 +125,73 @@ a.btn-border-shadow:before {
   border-radius: 0.5rem;
 }
 
-a.btn-border-shadow:hover {
+.btn-border-shadow:hover {
   padding: calc(1.5rem - 6px) 3rem;
 }
 
-a.btn-border-shadow:hover:before {
+.btn-border-shadow:hover:before {
   top: 0;
   left: 0;
 }
 
-a.btn-border-shadow--color {
+.btn-border-shadow--color {
   border-radius: 0;
   background: #51B2FF;
 }
 
-a.btn-border-shadow--color:before {
+.btn-border-shadow--color:before {
   border-radius: 0;
+}
+
+
+
+
+.btn3,
+a.btn3,
+button.btn3 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-border {
+  border: 3px solid #000;
+  border-radius: 0;
+  background: #fff;
+}
+
+a.btn-border:before {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  content: '';
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: 1px solid #000;
+}
+
+a.btn-border:hover:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
 }
