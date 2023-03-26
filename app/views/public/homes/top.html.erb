@@ -1,13 +1,16 @@
-     <%= stylesheet_link_tag "home", :media => "all" %>
-
-
-     <div class="text">
-      <div class="image"><%= image_tag 'logo.png', size: "400x200" %></div>
-      <div class="text01">
-     <div class="signup"><%= link_to new_user_registration_path, class: "btn btn--orange btn--circle btn--circle-a btn--shadow" do %>新規登録
-      <% end %></div>
-       <div class="signup"><%= link_to  new_user_session_path, class: "btn btn--pink btn--circle btn--circle-a btn--shadow" do %>ログイン
-      <% end %></div>
-       <div class="signup"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "login btn btn--wine btn--circle btn--circle-a btn--shadow" %>
-       </div>
+<div class="text">
+  <div class="image"><%= image_tag 'logo.png', size: "400x200" %></div>
+    <div class="text01">
+      <div class="signup">
+        <%= link_to new_user_registration_path, class: "btn btn--blue btn--circle btn--circle-a btn--shadow" do %>新規登録
+        <% end %>
       </div>
+      <div class="signup">
+        <%= link_to  new_user_session_path, class: "btn btn--white btn--circle btn--circle-a btn--shadow" do %>ログイン
+        <% end %>
+      </div>
+      <div class="signup">
+        <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "login btn btn--navy btn--circle btn--circle-a btn--shadow" %>
+      </div>
+    </div>
+</div>

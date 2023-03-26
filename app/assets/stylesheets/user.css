@@ -5,7 +5,7 @@ h2 {
   font-size:2em;
 	line-height:0.95em;
 	font-weight:bold;
-	color: #6699FF;
+	color: #51B2FF;
 	text-shadow: 0.02em 0.02em 0.02em rgba(0,0,0,1);
 }
 
@@ -32,52 +32,26 @@ h4 {
   font-size:2em;
 	line-height:0.95em;
 	font-weight:bold;
-	color: #6699FF;
+	color: #51B2FF;
 	text-shadow: 0.02em 0.02em 0.02em rgba(0,0,0,1);
 }
 
-.border {
-     display: block;
+.border-solid {
      width: 350px;
      height: 440px;
      line-height: 60px;
+     border: 1px solid #000;
      text-align: center;
      padding: 10px;
 }
 
-.search {
-  position: fixed;
-  top: 200px;
-  right: 350px;
-}
 
-.select {
-  position: fixed;
-  bottom: 250px;
-  right: 490px;
-}
 
-.brand {
-  display: flex;
-  flex-flow: column;
-  position: fixed;
-  bottom: 153px;
-  right: 500px;
-}
 
-.select02 {
-  position: fixed;
-  bottom: 250px;
-  right: 310px;
-}
 
-.category {
-  display: flex;
-  flex-flow: column;
-  position: fixed;
-  bottom: 64px;
-  right: 300px;
-}
+
+
+
 
 .edit {
    display: flex;

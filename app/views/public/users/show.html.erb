@@ -1,53 +1,55 @@
-  <%= stylesheet_link_tag "user", :media => "all" %>
-  <div class="container">
-   
-    <div class="row">
-      <div class="col-5">
-        <div class="border">
-         <h4><span>My Profile</h4></span>
-      
-            <% if @user.profile_image.attached? %>
-            <div class="user">
+<%= stylesheet_link_tag "user", :media => "all" %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="border-solid">
+        <h4><span>My Profile</span></h4>
+        <div class="user">
+          <% if @user.profile_image.attached? %>
             <%= image_tag @user.profile_image, size: "100x100" %>
-            <% else %>
+          <% else %>
             <%= image_tag 'no_image', size: "100x100" %>
-            <% end %>
-          </div>
-    <div class="user"><%= @user.nickname %></div>
-    <div class="user"><%= @skin_type.type_name %></div>
-    <div class="user"><%= @parsonal_color.color_name %></div>
-    <div class="user"><%= @user.introduction %></div>
-    <div class="user"><%= link_to "登録情報編集", users_edit_path, class:"btn btn-primary" %></div>
-    </div>
+          <% end %>
         </div>
+        <div class="user"><%= @user.nickname %></div>
+        <div class="user"><%= @skin_type.type_name %></div>
+        <div class="user"><%= @parsonal_color.color_name %></div>
+        <div class="user"><%= @user.introduction %></div>
+        <div class="user"><%= link_to "登録情報編集", users_edit_path, class:"btn btn-primary" %></div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-3">
       <div class="search">
         <h5>化粧品を検索する</h5>
-       
-
-          <%= form_with url: search_cosmetics_path, local: true, method: :get do |form| %>
+        <%= form_with url: search_cosmetics_path, local: true, method: :get do |form| %>
           <%= form.text_field :keyword %>
           <%= form.submit "検索", class:"btn btn-primary" %>
-          <% end %>
+        <% end %>
       </div>
-      
-   <div class="select">ブランドから選ぶ</div>
-      <div class="brand">
-        <%= link_to "CEZANNE", cezanne_path %>
-        <%= link_to "CANMAKE", canmake_path %>
-        <%= link_to "INTEGRATE", integrate_path %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-sm-8 col-sm-6 col-6">
+      <div class="brand02">ブランドから選ぶ</div>
+          <%= link_to "CEZANNE", cezanne_path %>
+          <%= link_to "CANMAKE", canmake_path %>
+          <%= link_to "INTEGRATE", integrate_path %>
       </div>
-   <div class="select02">カテゴリから選ぶ</div>
-      <div class="category">
-        <%= link_to "アイブロウ", eyebrow_path %>
-        <%= link_to "アイライナー", eyeliner_path %>
-        <%= link_to "マスカラ", mascara_path %>
-        <%= link_to "アイシャドウ", eyeshadow_path %>
-        <%= link_to "リップ", lip_path %>
-        <%= link_to "化粧下地", base_path %>
-        <%= link_to "チーク", cheek_path %>
-        <%= link_to "ファンデーション", foundation_path %>
-        <%= link_to "パウダー", powder_path %>
+    </div>
+    <div class="offset-sm-10 col-sm-6 col-6">
+      <div class="category02">
+        <div>カテゴリから選ぶ</div>
+              <%= link_to "アイブロウ", eyebrow_path %>
+              <%= link_to "アイライナー", eyeliner_path %>
+              <%= link_to "マスカラ", mascara_path %>
+              <%= link_to "アイシャドウ", eyeshadow_path %>
+              <%= link_to "リップ", lip_path %>
+              <%= link_to "化粧下地", base_path %>
+              <%= link_to "チーク", cheek_path %>
+              <%= link_to "ファンデーション", foundation_path %>
+              <%= link_to "パウダー", powder_path %>
+        </div>
       </div>
-        </div>
-        </div>
-        </div>
+    </div>
+  </div>
+</div>

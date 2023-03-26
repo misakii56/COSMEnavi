@@ -1,33 +1,32 @@
 
-
-a.btn--orange {
+a.btn--blue {
   color: #fff;
-  background-color: #FF0000;
+  background-color: #001FFF;
 }
 
-a.btn--orange:hover {
+a.btn--blue:hover {
   color: #fff;
-  background: #CC0000;
+  background: #0018C7;
 }
 
-a.btn--pink {
+a.btn--white {
   color: #fff;
-  background-color: #FF8484;
+  background-color: #008DFF;
 }
 
-a.btn--pink:hover {
+a.btn--white:hover {
   color: #fff;
-  background: #F1A7A7;
+  background: #51B2FF;
 }
 
-a.btn--wine {
+a.btn--navy {
   color: #fff;
-  background-color: #CB0000;
+  background-color: #0014A8;
 }
 
-a.btn--wine:hover {
+a.btn--navy:hover {
   color: #fff;
-  background: #AB0000;
+  background: #000F78;
 }
 
 a.btn--shadow {
@@ -51,6 +50,7 @@ justify-content: center;
   display:flex;
 justify-content: center;
 }
+
 .signup {
   float: left;
   padding-left: 10px;

@@ -1,52 +1,48 @@
-<%= stylesheet_link_tag "cosmetic", :media => "all" %>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2><span>すべての化粧品</span></h2>
-          <div class="box">
-             <div class="item">
-                     <% @cosmetics.each do |cosmetic| %>
-                      <div class="item02">
-                      　<%= link_to cosmetic_path(cosmetic.id) do %>
-                        <% if cosmetic.image.attached? %>
-                        <%= image_tag cosmetic.image, size: "130x130" %>
-                        <% else %>
-                        <%= image_tag 'no_image', size: "130x130" %>
-                        <% end %>
-                      </div>
-                        <% end %>
-                        
-                      <div class="item"><%= cosmetic.name %></div>
-                      <div class="item"><%= cosmetic.color %></div>
-                      <div class="item"><%= cosmetic.brand %></div>
-                    <% end %>
-             </div>
-          </div>
-          <div class="d-flex justify-content-center">
-              <%= paginate @cosmetics %>
-          </div>
+<%#= stylesheet_link_tag "cosmetic", :media => "all" %>
+<div class="container">
+  <h2><span>すべての化粧品</span></h2>
+  <div class="row">
+    <% @cosmetics.each do |cosmetic| %>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="item">
+        　<%= link_to cosmetic_path(cosmetic.id) do %>
+            <% if cosmetic.image.attached? %>
+              <%= image_tag cosmetic.image, size: "130x130" %>
+            <% else %>
+              <%= image_tag 'no_image', size: "130x130" %>
+            <% end %>
+          <% end %>
         </div>
+        <div class="item"><%= cosmetic.name %></div>
+        <div class="item"><%= cosmetic.color %></div>
+        <div class="item"><%= cosmetic.brand %></div>
       </div>
-      <div class="row">
-        <div class="col-2">
-          <div class="brand02">
-            <%= link_to "CEZANNE", cezanne_path %>
-            <%= link_to "CANMAKE", canmake_path %>
-            <%= link_to "INTEGRATE", integrate_path %>
-          </div>
-        </div>
-        <div class="col-10">
-          <div class="category02">
-            <%= link_to "アイブロウ", eyebrow_path %>
-            <%= link_to "アイライナー", eyeliner_path %>
-            <%= link_to "マスカラ", mascara_path %>
-            <%= link_to "アイシャドウ", eyeshadow_path %>
-            <%= link_to "リップ", lip_path %>
-            <%= link_to "化粧下地", base_path %>
-            <%= link_to "チーク", cheek_path %>
-            <%= link_to "ファンデーション", foundation_path %>
-            <%= link_to "パウダー", powder_path %>
-          </div>
-         </div>
+    <% end %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= paginate @cosmetics %>
+  </div>
+
+  <div class="row">
+    <div class="offset-sm-8 col-sm-2 col-6">
+      <div class="brand02 ml-4">
+        <%= link_to "CEZANNE", cezanne_path %>
+        <%= link_to "CANMAKE", canmake_path %>
+        <%= link_to "INTEGRATE", integrate_path %>
       </div>
     </div>
+    <div class="col-6 col-sm-2">
+      <div class="category02 ml-4">
+        <%= link_to "アイブロウ", eyebrow_path %>
+        <%= link_to "アイライナー", eyeliner_path %>
+        <%= link_to "マスカラ", mascara_path %>
+        <%= link_to "アイシャドウ", eyeshadow_path %>
+        <%= link_to "リップ", lip_path %>
+        <%= link_to "化粧下地", base_path %>
+        <%= link_to "チーク", cheek_path %>
+        <%= link_to "ファンデーション", foundation_path %>
+        <%= link_to "パウダー", powder_path %>
+      </div>
+     </div>
+  </div>
+</div>
