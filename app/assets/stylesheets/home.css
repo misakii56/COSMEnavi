@@ -1,18 +1,58 @@
 
 
+a.btn--orange {
+  color: #fff;
+  background-color: #FF0000;
+}
+
+a.btn--orange:hover {
+  color: #fff;
+  background: #CC0000;
+}
+
+a.btn--pink {
+  color: #fff;
+  background-color: #FF8484;
+}
+
+a.btn--pink:hover {
+  color: #fff;
+  background: #F1A7A7;
+}
+
+a.btn--wine {
+  color: #fff;
+  background-color: #CB0000;
+}
+
+a.btn--wine:hover {
+  color: #fff;
+  background: #AB0000;
+}
+
+a.btn--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+a.btn--circle {
+  border-radius: 50%;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+}
+
+.image {
+  display:flex;
+justify-content: center;
+}
+.text01 {
+  display:flex;
+justify-content: center;
+}
 .signup {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  padding: 1em 2em;
-  width: 300px;
-  color: #333;
-  font-size: 18px;
-  font-weight: 700;
-  background-color: #cccccc;
-  border-radius: 50vh;
-  margin-bottom: 10px;
-  text-decoration: none;
-  
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
 }

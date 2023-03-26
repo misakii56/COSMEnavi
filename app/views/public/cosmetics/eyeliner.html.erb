@@ -1,20 +1,25 @@
 <div class="container">
-<h2><span>アイライナー</h2></span>
-  <% @eyeliner.each do |e| %>
-    <div>
-      <%= link_to cosmetic_path(e.id) do %>
-          <% if e.image.attached? %>
-          <%= image_tag e.image, size: "50x50" %>
-          <% else %>
-          <%= image_tag 'no_image', size: "50x50" %>
-          <% end %>
-          <% end %>
-      <%= e.name %>
-      <%= e.brand %>
-      <%= e.color %>
-    </div>
-  <% end %>
-    <div class="d-flex justify-content-center">
-   <%= paginate @cosmetics %>
-   </div>
+  <h4><span>アイライナー</h4></span>
+    <table class="table">
+      <tbody>
+        <% @eyeliner.each do |e| %>
+          <tr>
+            <td><%= link_to cosmetic_path(e.id) do %>
+                <% if e.image.attached? %>
+                <%= image_tag e.image, size: "50x50" %>
+                <% else %>
+                <%= image_tag 'no_image', size: "50x50" %>
+                <% end %>
+                <% end %>
+            </td>
+            <td><%= e.name %></td>
+            <td><%= e.brand %></td>
+            <td><%= e.color %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-center">
+  <%= paginate @cosmetics %>
 </div>

@@ -1,20 +1,25 @@
 <div class="container">
-<h2><span>INTEGRATE</h2></span>
-  <% @integrate.each do |i| %>
-    <div>
-      <%= link_to cosmetic_path(i.id) do %>
-          <% if i.image.attached? %>
-          <%= image_tag i.image, size: "50x50" %>
-          <% else %>
-          <%= image_tag 'no_image', size: "50x50" %>
-          <% end %>
-          <% end %>
-      <%= i.name %>
-      <%= i.brand %>
-      <%= i.color %>
-    </div>
-  <% end %>
-  <div class="d-flex justify-content-center">
-   <%= paginate @cosmetics %>
-   </div>
+  <h4><span>INTEGRATE</h4></span>
+    <table class="table">
+      <tbody>
+        <% @integrate.each do |i| %>
+          <tr>
+            <td><%= link_to cosmetic_path(i.id) do %>
+                <% if i.image.attached? %>
+                <%= image_tag i.image, size: "50x50" %>
+                <% else %>
+                <%= image_tag 'no_image', size: "50x50" %>
+                <% end %>
+                <% end %>
+            </td>
+            <td><%= i.name %></td>
+            <td><%= i.brand %></td>
+            <td><%= i.color %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-center">
+  <%= paginate @cosmetics %>
 </div>

@@ -1,20 +1,25 @@
 <div class="container">
-<h2><span>パウダー</h2></span>
-  <% @powder.each do |po| %>
-    <div>
-      <%= link_to cosmetic_path(po.id) do %>
-          <% if po.image.attached? %>
-          <%= image_tag po.image, size: "50x50" %>
-          <% else %>
-          <%= image_tag 'no_image', size: "50x50" %>
-          <% end %>
-          <% end %>
-      <%= po.name %>
-      <%= po.brand %>
-      <%= po.color %>
-    </div>
-  <% end %>
-    <div class="d-flex justify-content-center">
-   <%= paginate @cosmetics %>
-   </div>
+  <h4><span>パウダー</h4></span>
+    <table class="table">
+      <tbody>
+        <% @powder.each do |po| %>
+          <tr>
+            <td><%= link_to cosmetic_path(po.id) do %>
+                <% if po.image.attached? %>
+                <%= image_tag po.image, size: "50x50" %>
+                <% else %>
+                <%= image_tag 'no_image', size: "50x50" %>
+                <% end %>
+                <% end %>
+            </td>
+            <td><%= po.name %></td>
+            <td><%= po.brand %></td>
+            <td><%= po.color %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-center">
+  <%= paginate @cosmetics %>
 </div>

@@ -1,20 +1,24 @@
 <div class="container">
-<h2><span>チーク</h2></span>
-  <% @cheek.each do |c| %>
-    <div>
-      <%= link_to cosmetic_path(c.id) do %>
-          <% if c.image.attached? %>
-          <%= image_tag c.image, size: "50x50" %>
-          <% else %>
-          <%= image_tag 'no_image', size: "50x50" %>
-          <% end %>
-          <% end %>
-      <%= c.name %>
-      <%= c.brand %>
-      <%= c.color %>
-    </div>
-  <% end %>
-    <div class="d-flex justify-content-center">
-   <%= paginate @cosmetics %>
-   </div>
+  <h4><span>チーク</h4></span>
+    <table class="table">
+      <tbody>
+        <% @cheek.each do |c| %>
+          <tr>
+            <td><%= link_to cosmetic_path(c.id) do %>
+                <% if c.image.attached? %>
+                <%= image_tag c.image, size: "50x50" %>
+                <% else %>
+                <%= image_tag 'no_image', size: "50x50" %>
+                <% end %>
+                <% end %></td>
+            <td><%= c.name %></td>
+            <td><%= c.brand %></td>
+            <td><%= c.color %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-center">
+  <%= paginate @cosmetics %>
 </div>

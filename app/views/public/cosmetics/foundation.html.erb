@@ -1,20 +1,25 @@
 <div class="container">
-<h2><span>ファンデーション</h2></span>
-  <% @foundation.each do |f| %>
-    <div>
-      <%= link_to cosmetic_path(f.id) do %>
-          <% if f.image.attached? %>
-          <%= image_tag f.image, size: "50x50" %>
-          <% else %>
-          <%= image_tag 'no_image', size: "50x50" %>
-          <% end %>
-          <% end %>
-      <%= f.name  %>
-      <%= f.brand %>
-      <%= f.color %>
-    </div>
-  <% end %>
-    <div class="d-flex justify-content-center">
-   <%= paginate @cosmetics %>
-   </div>
+  <h4><span>ファンデーション</h4></span>
+    <table class="table">
+      <tbody>
+        <% @foundation.each do |f| %>
+          <tr>
+            <td><%= link_to cosmetic_path(f.id) do %>
+                <% if f.image.attached? %>
+                <%= image_tag f.image, size: "50x50" %>
+                <% else %>
+                <%= image_tag 'no_image', size: "50x50" %>
+                <% end %>
+                <% end %>
+            </td>
+            <td><%= f.name  %></td>
+            <td><%= f.brand %></td>
+            <td><%= f.color %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-center">
+  <%= paginate @cosmetics %>
 </div>
