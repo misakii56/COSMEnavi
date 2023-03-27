@@ -10,14 +10,8 @@ justify-content: center;
 }
 
 
-.brand02 {
-  display: flex;
-  flex-flow: column;
-}
-.category02 {
-  display: flex;
-  flex-flow: column;
-}
+
+
 .pagination>li>a {
   border: none;     /*枠線をなくす*/
   color: #696969;   /*文字の色を変える*/

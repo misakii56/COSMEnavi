@@ -44,7 +44,8 @@
            <td><%= review.user.nickname %></td>
            <td><%= review.user.skin_type.type_name %></td>
            <td><%= review.user.parsonal_color.color_name %></td>
-           <td><%= link_to "➡︎", cosmetic_review_path(@cosmetic, review.id), class:"btn btn-primary" %></td>
+           <td><%= link_to "➡︎", cosmetic_review_path(@cosmetic, review.id), class:"btn btn2--circle btn--circle-c btn2--shadow" %></td>
+
       </tr>
       <script>
         document.getElementById('rate_<%= review.id %>').innerHTML = '';
