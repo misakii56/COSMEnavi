@@ -30,7 +30,7 @@
         <div class="new01">
             <%= @review.review %>
             <% if @review.user_id == current_user.id %>
-            <p><%= link_to "編集", edit_cosmetic_review_path, class:"btn btn-primary" %></p>
+            <div><%= link_to "➡︎", edit_cosmetic_review_path, class:"btn btn2--circle btn--circle-c btn2--shadow" %><div>
             </div>
             <% end %>
 
@@ -74,7 +74,7 @@
           </td>
             <% if comment.user_id == current_user.id %>
           <td>
-            <%= link_to "編集", edit_cosmetic_review_comment_path(review_id: @review.id, id: comment.id), class:"btn btn-primary" %>
+            <%= link_to "➡︎", edit_cosmetic_review_comment_path(review_id: @review.id, id: comment.id), class:"btn btn2--circle btn--circle-c btn2--shadow" %>
           </td>
             <% end %>
         </tr>

@@ -1,24 +1,24 @@
 <div class="container">
-  <h4><span>化粧下地</h4></span>
-    <table class="table">
-      <tbody>
-        <% @base.each do |b| %>
-          <tr>
-            <td><%= link_to cosmetic_path(b.id) do %>
-                <% if b.image.attached? %>
-                <%= image_tag b.image, size: "50x50" %>
-                <% else %>
-                <%= image_tag 'no_image', size: "50x50" %>
-                <% end %>
-                <% end %></td>
-            <td><%= b.name %></td>
-            <td><%= b.brand %></td>
-            <td><%= b.color %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <h4>化粧下地</h4>
+  <div class="row">
+    <% @base.each do |b| %>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="item">
+          <%= link_to cosmetic_path(b.id) do %>
+            <% if b.image.attached? %>
+              <%= image_tag b.image, size: "130x130" %>
+            <% else %>
+              <%= image_tag 'no_image', size: "130x130" %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="item"><%= b.name %></div>
+        <div class="item"><%= b.brand %></div>
+        <div class="item"><%= b.color %></div>
+      </div>
+    <% end %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= paginate @cosmetics %>
+  </div>
 </div>
-    <div class="d-flex justify-content-center">
-   <%= paginate @cosmetics %>
-   </div>
