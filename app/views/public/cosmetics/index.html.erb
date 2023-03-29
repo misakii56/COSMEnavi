@@ -22,29 +22,33 @@
   <div class="d-flex justify-content-center">
     <%= paginate @cosmetics %>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-sm-12 col-6">
-      <div class="brand02 ml-4">
-        <div class="cosme">ブランド</div>
-        <%= link_to "CEZANNE", cezanne_path, class: "link" %>
-        <%= link_to "CANMAKE", canmake_path, class: "link" %>
-        <%= link_to "INTEGRATE", integrate_path, class: "link" %>
+
+<div class="col-12"style="margin-left: 30px; margin-top: 50px;" >
+  <div class="form">
+    <div class="title">ブランド</div>
+    <div class="row" style="margin-left: 0px;">
+      <div class="cosme" style="margin: 3px"><%= link_to "CEZANNE", cezanne_path, class: "link" %></div>
+      <div class="cosme" style="margin: 3px"><%= link_to "CANMAKE", canmake_path, class: "link" %></div>
+      <div class="cosme" style="margin: 3px"><%= link_to "INTEGRATE", integrate_path, class: "link" %></div>
+    </div>
+  </div>
+</div>
+<div class="col-12"style="margin-left: 30px; margin-top: 50px;" >
+  <div class="form">
+    <div class="title">商品ラインナップ</div>
+      <div class="row" style="margin-left: 0px;">
+        <div class="cosme"><%= image_tag 'eyebrow.png', size: "30x30" %><%= link_to "アイブロウ", eyebrow_path, class: "link" %></div>
+        <div class="cosme"><%= image_tag 'pen.png', size: "30x30" %><%= link_to "アイライナー", eyeliner_path, class: "link" %></div>
+        <div class="cosme"><%= image_tag 'lash.png', size: "30x30" %><%= link_to "マスカラ", mascara_path, class: "link" %></div>
+        <div class="cosme"><%= image_tag 'mirror.png', size: "30x30" %><%= link_to "アイシャドウ", eyeshadow_path, class: "link" %></div>
+        <div class="cosme"><%= image_tag 'rouge2.png', size: "30x30" %><%= link_to "リップ", lip_path, class: "link" %></div>
+        <div class="cosme"><%= image_tag 'base.png', size: "30x30" %><%= link_to "化粧下地", base_path, class: "link" %></div>
+        <div class="cosme"><%= image_tag 'cheek.png', size: "30x30" %><%= link_to "チーク", cheek_path, class: "link" %></div>
+        <div class="cosme"><%= image_tag 'faundation.png', size: "30x30" %><%= link_to "ファンデーション", foundation_path, class: "link" %></div>
+        <div class="cosme"><%= image_tag 'powder.png', size: "30x30" %><%= link_to "パウダー", powder_path, class: "link" %></div>
       </div>
     </div>
-    <div class="col-6 col-sm-12">
-      <div class="category02 ml-4">
-        <div class="cosme">商品ラインナップ</div>
-        <%= image_tag 'eyebrow.png', size: "30x30" %><%= link_to "アイブロウ", eyebrow_path, class: "link" %>
-        <%= image_tag 'pen.png', size: "30x30" %><%= link_to "アイライナー", eyeliner_path, class: "link" %>
-        <%= image_tag 'lash.png', size: "30x30" %><%= link_to "マスカラ", mascara_path, class: "link" %>
-        <%= image_tag 'mirror.png', size: "30x30" %><%= link_to "アイシャドウ", eyeshadow_path, class: "link" %>
-        <%= image_tag 'rouge2.png', size: "30x30" %><%= link_to "リップ", lip_path, class: "link" %>
-        <%= image_tag 'base.png', size: "30x30" %><%= link_to "化粧下地", base_path, class: "link" %>
-        <%= image_tag 'cheek.png', size: "30x30" %><%= link_to "チーク", cheek_path, class: "link" %>
-        <%= image_tag 'faundation.png', size: "30x30" %><%= link_to "ファンデーション", foundation_path, class: "link" %>
-        <%= image_tag 'powder.png', size: "30x30" %><%= link_to "パウダー", powder_path, class: "link" %>
-      </div>
-     </div>
   </div>
 </div>

@@ -147,9 +147,6 @@ button.btn2 {
   border-radius: 0;
 }
 
-
-
-
 .btn3,
 button.btn3 {
   font-size: 1rem;
@@ -222,9 +219,14 @@ button.btn3 {
   height: 30px;
   padding: 0;
 }
+.title {
+  font-size: 1.5vw;
+  border-bottom: 8px solid navy;
+}
 .cosme {
   font-size: 1vw;
-  padding-bottom: 3px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .link:hover {
   text-decoration: none;
