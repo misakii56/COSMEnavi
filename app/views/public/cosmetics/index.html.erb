@@ -1,6 +1,6 @@
 <%#= stylesheet_link_tag "cosmetic", :media => "all" %>
 <div class="container">
-  <h2>すべての化粧品</h2>
+  <h2><span>すべての化粧品</span></h2>
   <div class="row">
     <% @cosmetics.each do |cosmetic| %>
       <div class="col-6 col-sm-4 col-md-3">
@@ -27,23 +27,23 @@
     <div class="col-sm-12 col-6">
       <div class="brand02 ml-4">
         <div class="cosme">ブランド</div>
-        <%= link_to "CEZANNE", cezanne_path %>
-        <%= link_to "CANMAKE", canmake_path %>
-        <%= link_to "INTEGRATE", integrate_path %>
+        <%= link_to "CEZANNE", cezanne_path, class: "link" %>
+        <%= link_to "CANMAKE", canmake_path, class: "link" %>
+        <%= link_to "INTEGRATE", integrate_path, class: "link" %>
       </div>
     </div>
     <div class="col-6 col-sm-12">
       <div class="category02 ml-4">
         <div class="cosme">商品ラインナップ</div>
-        <%= image_tag 'eyebrow.png', size: "30x30" %><%= link_to "アイブロウ", eyebrow_path %>
-        <%= image_tag 'pen.png', size: "30x30" %><%= link_to "アイライナー", eyeliner_path %>
-        <%= image_tag 'lash.png', size: "30x30" %><%= link_to "マスカラ", mascara_path %>
-        <%= image_tag 'mirror.png', size: "30x30" %><%= link_to "アイシャドウ", eyeshadow_path %>
-        <%= image_tag 'rouge2.png', size: "30x30" %><%= link_to "リップ", lip_path %>
-        <%= image_tag 'base.png', size: "30x30" %><%= link_to "化粧下地", base_path %>
-        <%= image_tag 'cheek.png', size: "30x30" %><%= link_to "チーク", cheek_path %>
-        <%= image_tag 'faundation.png', size: "30x30" %><%= link_to "ファンデーション", foundation_path %>
-        <%= image_tag 'powder.png', size: "30x30" %><%= link_to "パウダー", powder_path %>
+        <%= image_tag 'eyebrow.png', size: "30x30" %><%= link_to "アイブロウ", eyebrow_path, class: "link" %>
+        <%= image_tag 'pen.png', size: "30x30" %><%= link_to "アイライナー", eyeliner_path, class: "link" %>
+        <%= image_tag 'lash.png', size: "30x30" %><%= link_to "マスカラ", mascara_path, class: "link" %>
+        <%= image_tag 'mirror.png', size: "30x30" %><%= link_to "アイシャドウ", eyeshadow_path, class: "link" %>
+        <%= image_tag 'rouge2.png', size: "30x30" %><%= link_to "リップ", lip_path, class: "link" %>
+        <%= image_tag 'base.png', size: "30x30" %><%= link_to "化粧下地", base_path, class: "link" %>
+        <%= image_tag 'cheek.png', size: "30x30" %><%= link_to "チーク", cheek_path, class: "link" %>
+        <%= image_tag 'faundation.png', size: "30x30" %><%= link_to "ファンデーション", foundation_path, class: "link" %>
+        <%= image_tag 'powder.png', size: "30x30" %><%= link_to "パウダー", powder_path, class: "link" %>
       </div>
      </div>
   </div>
