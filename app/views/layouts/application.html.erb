@@ -27,34 +27,34 @@
     <div class="d-flex align-items-end">
     <% if user_signed_in? %>
 
-          <div class="p-2"><%= link_to cosmetics_path, class: "link" do %>すべての化粧品
+          <div class="p-2"><%= link_to cosmetics_path, class: "btn btn--header btn--cubic btn--shadow" do %>すべての化粧品
       <% end %></div>
 
-      <div class="p-2"><%= link_to my_page_path, class: "link" do %>マイページ
+      <div class="p-2"><%= link_to my_page_path, class: "btn btn--header btn--cubic btn--shado" do %>マイページ
       <% end %></div>
 
-      <div class="p-2"><%= link_to destroy_user_session_path, method: :delete, class: "link" do %>
-      <i class="fas fa-sign-out-alt" style="color: black;" ></i>ログアウト
+      <div class="p-2"><%= link_to destroy_user_session_path, method: :delete, class: "btn btn--header btn--cubic btn--shado" do %>
+      <i class="fas fa-sign-out-alt" style="color: white;" ></i>ログアウト
       <% end %></div>
     <% elsif admin_signed_in? %>
 
-     <div class="p-2"><%= link_to admin_skin_types_path do %>肌タイプ一覧
+     <div class="p-2"><%= link_to admin_skin_types_path, class: "btn btn--header btn--cubic btn--shadow" do %>肌タイプ一覧
       <% end %></div>
-      <div class="p-2"><%= link_to admin_parsonal_colors_path do %>パーソナルカラー一覧
+      <div class="p-2"><%= link_to admin_parsonal_colors_path, class: "btn btn--header btn--cubic btn--shadow" do %>パーソナルカラー一覧
       <% end %></div>
-      <div class="p-2"><%= link_to admin_cosmetics_path do %>化粧品一覧
+      <div class="p-2"><%= link_to admin_cosmetics_path, class: "btn btn--header btn--cubic btn--shadow" do %>化粧品一覧
       <% end %></div>
-      <div class="p-2"><%= link_to admin_users_path do %>会員一覧
+      <div class="p-2"><%= link_to admin_users_path, class: "btn btn--header btn--cubic btn--shadow" do %>会員一覧
       <% end %></div>
-      <div class="p-2"><%= link_to admin_reviews_path do %>レビュー一覧
+      <div class="p-2"><%= link_to admin_reviews_path, class: "btn btn--header btn--cubic btn--shadow" do %>レビュー一覧
       <% end %></div>
 
-      <div class="p-2"><%= link_to destroy_admin_session_path, method: :delete do %>ログアウト
+      <div class="p-2"><%= link_to destroy_admin_session_path, method: :delete, class: "btn btn--header btn--cubic btn--shadow" do %>ログアウト
       <% end %></div>
     <% else %>
-       <div class="p-2"><%= link_to new_user_registration_path do %>新規登録
+       <div class="p-2"><%= link_to new_user_registration_path, class: "btn btn--header btn--cubic btn--shadow" do %>新規登録
       <% end %></div>
-       <div class="p-2"><%= link_to  new_user_session_path do %>ログイン
+       <div class="p-2"><%= link_to  new_user_session_path, class: "btn btn--header btn--cubic btn--shadow" do %>ログイン
       <% end %></div>
       <% end %>
       </div>
