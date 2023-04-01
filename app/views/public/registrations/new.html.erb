@@ -31,30 +31,33 @@
         </div>
 
         <div class="item" style="margin-top: 20px; font-size: 15px;">
-          <%= f.label :email, style:"margin-right: 50px;"%>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.label :email, style:"margin-left: 30px;"%>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", style:"margin-left: 100px;" %>
         </div>
 
-          <div class="item" style="margin-top: 20px; font-size: 15px; margin-right: 50px;">
-            <%= f.label :password, "パスワード" %>
-              <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> 字以上)</em>
-            <% end %>
-            <%= f.password_field :password, autocomplete: "new-password", style:"margin-left: 10px;" %>
-          </div>
+        <div class="item" style="margin-top: 20px; font-size: 15px;">
+          <%= f.label :password, "パスワード" %>
+           <% if @minimum_password_length %>
+             <em>(<%= @minimum_password_length %> 字以上)</em>
+           <% end %>
+           <%= f.password_field :password, autocomplete: "new-password", style:"margin-left: 50px; margin-right:23px;" %>
+        </div>
 
 
         <div class="item" style="margin-top: 20px; font-size: 15px;">
-          <%= f.label :password_confirmation, "パスワード(確認用)", style:"margin-right: 60px;" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          <%= f.label :password_confirmation, "パスワード(確認用)" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", style:"margin-left: 55px; margin-right:15px;" %>
         </div>
 
-        <div class="item"><%= f.submit "新規登録", class:"btn btn-primary" %></div>
+        <div class="item" style="margin-top: 20px; font-size: 15px;"><%= f.submit "新規登録", class:"btn btn-primary" %></div>
       <% end %>
 
-      <div class="item">すでに登録済みの方</div>
-      <div class="item"><%= render "public/shared/links" %></div>
-      <div class="item">からログインしてください。</div>
+      <div class="item" style="margin-top: 20px; font-size: 15px;">
+        すでに登録済みの方はこちらからログインしてください。
+      </div>
+      <div class="item">
+        <%= link_to  new_user_session_path, class: "btn btn--header btn--cubic btn--shadow" do %>ログイン<% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -24,7 +24,7 @@ root to: 'public/homes#top'
          resources :comments
        end
    end
-    
+
     get 'users/show' => 'users#show', as: 'my_page'
     get 'users/edit' => 'users#edit'
     get 'users/confirm' => 'users#confirm', as: 'confirm'

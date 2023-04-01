@@ -1,22 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-6">
+    <div class="col-12">
       <h4>化粧品編集</h4>
-      <p>化粧品画像</p>
-
-<%= form_with model: @cosmetic, url:admin_cosmetic_path(@cosmetic.id) do |f| %>
-  <%= f.file_field :image, accept: "image/*" %>
-
-  <p>化粧品名</p>
-<%= f.text_field :name %>
-<p>ブランド</p>
-<%= f.text_field :brand %>
-<p>カラー</p>
-<%= f.text_field :color %>
-
-<%= f.submit '変更を保存', class:"btn btn-primary" %>
-  <% end %>
-
+      <div class="item" style="margin-top: 50px; font-size: 15px;">化粧品画像</div>
+      <%= form_with model: @cosmetic, url:admin_cosmetic_path(@cosmetic.id) do |f| %>
+        <div class="item">
+          <%= f.file_field :image, accept: "image/*" %>
+        </div>
+        <div class="item" style="margin-top: 20px; font-size: 15px;">化粧品名</div>
+        <div class="item"><%= f.text_field :name %></div>
+        <div class="item" style="margin-top: 20px; font-size: 15px;">ブランド</div>
+        <div class="item"><%= f.text_field :brand %></div>
+        <div class="item" style="margin-top: 20px; font-size: 15px;">カラー</div>
+        <div class="item"><%= f.text_field :color %></div>
+        <div class="item" style="margin-top: 20px;"><%= f.submit '変更を保存', class:"btn btn-primary" %></div>
+      <% end %>
+    </div>
   </div>
-  </div>
-  </div>
+</div>
