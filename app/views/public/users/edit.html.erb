@@ -6,26 +6,26 @@
         <div class="item" style="margin-top: 20px; font-size: 15px;">プロフィール画像</div>
         <div class="item"><%= f.file_field :profile_image, accept: "image/*" %></div>
         <div class="item" style="margin-top: 20px; font-size: 15px;">ニックネーム</div>
-        <div class="item"><%= f.text_field :nickname %></div>
+        <div class="item" style="font-size: 15px;"><%= f.text_field :nickname %></div>
         
         <div class="item" style="margin-top: 20px; font-size: 15px;">生年月日</div>
-        <div class="item">
+        <div class="item" style="font-size: 15px;">
           <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1923, end_year: (Time.now.year), default: Date.new(1989,1,1) %>
         </div>
         <div class="item" style="margin-top: 20px; font-size: 15px;">肌タイプ</div>
-        <div class="item">
+        <div class="item" style="font-size: 15px;">
           <%= f.collection_select :skin_type_id, SkinType.all, :id, :type_name, {prompt: "選択してください"} %>
         </div>
         <div class="item" style="margin-top: 20px; font-size: 15px;">パーソナルカラー</div>
-        <div class="item">
+        <div class="item" style="font-size: 15px;">
           <%= f.collection_select :parsonal_color_id, ParsonalColor.all, :id, :color_name, {prompt: "選択してください"} %>
         </div>
         <div class="item" style="margin-top: 20px; font-size: 15px;">メールアドレス</div>
-        <div class="item"><%= f.text_field :email %></div>
+        <div class="item" style="font-size: 15px;"><%= f.text_field :email %></div>
         <div class="item" style="margin-top: 20px; font-size: 15px;">自己紹介文</div>
-        <div class="item"><%= f.text_area :introduction %></div>
+        <div class="item" style="font-size: 15px;"><%= f.text_area :introduction %></div>
         <div class="item" style="margin-top: 20px;">
-          <%= f.submit '編集内容を保存', class:"btn btn-primary", style:"margin-right: 5px;" %><%= link_to "退会︎", confirm_path, class:"btn btn-danger" %>
+          <%= f.submit '保存', class:"btn btn-primary", style:"margin-right: 5px;" %><%= link_to "退会︎", confirm_path, class:"btn btn-danger" %>
         </div>
       <% end %>
     </div>

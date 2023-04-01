@@ -37,7 +37,7 @@
         </div>
 
         <%= form_with model: @comment,url: cosmetic_review_comments_path(@review.cosmetic,@review) do |f| %>
-          <div class="review" style="margin-top: 50px;">
+          <div class="review" style="margin-top: 50px; font-size:15px;">
             <%= f.text_area :comment %>
           </div>
           <div class="review">

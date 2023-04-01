@@ -3,7 +3,7 @@
     <div class="col-12">
       <h4><span>コメントの編集</span></h4>
       <%= form_with model: @comment, url: cosmetic_review_comment_path(@comment.id) do |f| %>
-        <div class="item" style="margin-top: 100px;">
+        <div class="item" style="margin-top: 100px; font-size:15px;">
           <%= f.text_area :comment %>
         </div>
         <div class="item" style="margin-top: 30px;">

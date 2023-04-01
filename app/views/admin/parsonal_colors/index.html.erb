@@ -4,7 +4,7 @@
     <h3>パーソナルカラー一覧・追加</h3>
       <%= form_with model: @parsonal_color, url:admin_parsonal_colors_path do |f| %>
         <div class="row">
-          <div class="item" style="margin-top: 30px; margin-left: 50px"><%= f.text_field :color_name %></div>
+          <div class="item" style="margin-top: 30px; margin-left: 50px; font-size:15px;"><%= f.text_field :color_name %></div>
           <div class="item" style="margin-top: 30px; margin-left: 10px"><%= f.submit '新規登録', class:"btn btn-primary" %></div>
         </div>
       <% end %>
@@ -19,7 +19,7 @@
           <% @parsonal_colors.each do |parsonal_color| %>
             <tr>
               <td><%= parsonal_color.color_name %></td>
-              <td><%= link_to "編集する", edit_admin_parsonal_color_path(parsonal_color.id), class:"btn btn-primary" %></td>
+              <td><%= link_to "編集", edit_admin_parsonal_color_path(parsonal_color.id), class:"btn btn-primary" %></td>
             </tr>
           <% end %>
         </tbody>

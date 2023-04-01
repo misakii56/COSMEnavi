@@ -1,10 +1,8 @@
-<div class="text-center">
-  <h4>本当に退会しますか？</h4>
+<div class="item" style="margin-top: 100px;"><h1>本当に退会しますか？</h1></div>
+<div class="item" style="font-size: 15px;">
     退会する場合は、「退会する」をクリックしてください。
 </div>
-<div class="text-center">
-  
-  <div class="new01"><%= link_to "退会しない", my_page_path, class:"btn btn-dark" %>
-    <%= link_to "退会する", out_path, method: :patch, data: { confirm: '退会しますか？' }, class:"btn btn-danger" %>
-  </div>
+<div class="item" style="margin-top:50px;">
+  <%= link_to "退会しない", my_page_path, class:"btn btn-dark", style:"margin-right: 5px;" %>
+  <%= link_to "退会する", out_path, method: :patch, data: { confirm: '退会しますか？' }, class:"btn btn-danger" %>
 </div>

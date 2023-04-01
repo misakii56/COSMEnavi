@@ -22,8 +22,10 @@
           <div class="title">化粧品を検索する</div>
           <div class="row" style="margin-top: 30px; margin-left: 5px;">
             <%= form_with url: search_cosmetics_path, local: true, method: :get do |form| %>
-              <%= form.text_field :keyword %>
-              <%= form.submit "検索", class:"btn btn-dark" %>
+              <div class="item" style="font-size: 15px;">
+                <%= form.text_field :keyword %>
+                <%= form.submit "検索", class:"btn btn-dark" %>
+              </div>
             <% end %>
           </div>
         </div>

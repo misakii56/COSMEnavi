@@ -1,3 +1,4 @@
+/*ページのタイトル*/
 h2 {
   position: relative;
   padding: 0 65px;
@@ -24,7 +25,7 @@ h2 span {
   padding: 0 1em;
   background: #fff;
 }
-
+/*全ての化粧品タイトル*/
 h4 {
   position: relative;
   padding: 0 65px;
@@ -35,7 +36,7 @@ h4 {
 	color: #8ECCFF;
 	text-shadow: 0.02em 0.02em 0.02em rgba(0,0,0,1);
 }
-
+/*マイプロフィール*/
 .border-solid {
      line-height: 30px;
      text-align: center;
@@ -56,15 +57,11 @@ h4 {
      padding: 0 8px;
 }
 .user {
-  font-size: 0.8vw;
+  font-size: 0.9vw;
   padding-bottom: 20px;
 }
 
-
-.comment {
-  font-size: 15px;
-}
-
+/*ヘッダー*/
 body {
   padding: 30px;
 }
@@ -94,7 +91,6 @@ button.btn2 {
 
 .btn-border-shadow {
   padding: calc(1.5rem - 12px) 3rem 1.5rem;
-
   background: #fff;
 }
 
@@ -204,6 +200,8 @@ button.btn3 {
   height: 30px;
   padding: 0;
 }
+
+/*マイページのタイトル*/
 .title {
   font-size: 1.5vw;
   border-bottom: 5px solid navy;
@@ -218,11 +216,14 @@ button.btn3 {
   content: '';
   background: #51B2FF;
 }
+
 .cosme {
   font-size: 1vw;
   padding-bottom: 10px;
   padding-top: 10px;
 }
+
+/*グレーのリンク*/
 .link:hover {
   text-decoration: none;
   color: #787878;
@@ -233,6 +234,7 @@ button.btn3 {
   color: black;
 }
 
+/*ヘッダーのボタン*/
 a.btn--header {
   color: #fff;
   background-color: #008DFF;
