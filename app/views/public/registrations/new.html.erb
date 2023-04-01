@@ -1,77 +1,60 @@
-<div class="d-flex justify-content-center">
-  <h2><span>新規会員登録</span></h2>
-</div>
+<div class="container">
+  <h4><span>新規会員登録</span></h4>
+  <div class="row">
+    <div class="col-12">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "public/shared/error_messages", resource: resource %>
+
+        <div class="item" style="margin-top: 20px; font-size: 15px;">
+          <%= f.label :nickname, "ニックネーム", style:"margin-right: 50px;" %>
+          <%= f.text_field :nickname, autofocus: true %>
+        </div>
+
+        <div class="item" style="margin-top: 20px; font-size: 15px;">
+          <%= f.label :birth_date, "生年月日", style:"margin-right: 90px;" %>
+          <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1923, end_year: (Time.now.year), default: Date.new(1989,1,1) %>
+        </div>
+
+        <div class="item" style="margin-top: 20px; font-size: 15px;">
+          <%= f.label :skin_type, "肌タイプ", style:"margin-right: 90px;" %>
+          <%= f.collection_select :skin_type_id, SkinType.all, :id, :type_name, {prompt: "選択してください"} %>
+        </div>
+
+        <div class="item" style="margin-top: 20px; font-size: 15px;">
+          <%= f.label :parsonal_color, "パーソナルカラー", style:"margin-right: 40px;" %>
+          <%= f.collection_select :parsonal_color_id, ParsonalColor.all, :id, :color_name, {prompt: "選択してください"} %>
+        </div>
+
+        <div class="item" style="margin-top: 20px; font-size: 15px;">
+          <%= f.label :introduction, "自己紹介", style:"margin-left: 25px;" %>
+          <%= f.text_area :introduction, autofocus: true, style:"margin-left: 80px;" %>
+        </div>
+
+        <div class="item" style="margin-top: 20px; font-size: 15px;">
+          <%= f.label :email, style:"margin-right: 50px;"%>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+          <div class="item" style="margin-top: 20px; font-size: 15px; margin-right: 50px;">
+            <%= f.label :password, "パスワード" %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> 字以上)</em>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "new-password", style:"margin-left: 10px;" %>
+          </div>
 
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
+        <div class="item" style="margin-top: 20px; font-size: 15px;">
+          <%= f.label :password_confirmation, "パスワード(確認用)", style:"margin-right: 60px;" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
 
-  <div class="d-flex justify-content-center">
-  <div class="field">
-    <%= f.label :nickname, "ニックネーム" %><br />
-    <%= f.text_field :nickname, autofocus: true %>
-  </div>
-  </div>
+        <div class="item"><%= f.submit "新規登録", class:"btn btn-primary" %></div>
+      <% end %>
 
-  <div class="d-flex justify-content-center">
-  <div class="field">
-    <%= f.label :birth_date, "生年月日" %><br />
-    <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1923, end_year: (Time.now.year), default: Date.new(1989,1,1) %>
+      <div class="item">すでに登録済みの方</div>
+      <div class="item"><%= render "public/shared/links" %></div>
+      <div class="item">からログインしてください。</div>
+    </div>
   </div>
-  </div>
-
-  <div class="d-flex justify-content-center">
-  <div class="field">
-    <%= f.label :skin_type, "肌タイプ" %><br />
-    <%= f.collection_select :skin_type_id, SkinType.all, :id, :type_name, {prompt: "選択してください"} %>
-  </div>
-  </div>
-
-  <div class="d-flex justify-content-center">
-  <div class="field">
-    <%= f.label :parsonal_color, "パーソナルカラー" %><br />
-    <%= f.collection_select :parsonal_color_id, ParsonalColor.all, :id, :color_name, {prompt: "選択してください"} %>
-  </div>
-  </div>
-
-  <div class="d-flex justify-content-center">
-  <div class="field">
-    <%= f.label :introduction, "自己紹介" %><br />
-    <%= f.text_area :introduction, autofocus: true %>
-  </div>
-  </div>
-
-  <div class="d-flex justify-content-center">
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  </div>
-
-<div class="d-flex justify-content-center">
-  <div class="field">
-    <%= f.label :password, "パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-  </div>
-
-<div class="d-flex justify-content-center">
-  <div class="field">
-    <%= f.label :password_confirmation, "パスワード(確認用)" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  </div>
-
-<div class="d-flex justify-content-center">
-  <div class="actions">
-    <%= f.submit "新規登録", class:"btn btn-primary" %>
-  </div>
-  </div>
-<% end %>
-
-<div class="d-flex justify-content-center">
-<div>すでに登録済みの方</br><%= render "public/shared/links" %>からログインしてください。</div>
 </div>

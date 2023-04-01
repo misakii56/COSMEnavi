@@ -1,32 +1,29 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-          <h4><span>レビューを編集する</span></h4>
-
-            <%= form_with model: @review, url: cosmetic_review_path(@review.id) do |f| %>
-            <div class="new">
-              <div class="new01">
-                <div id="post_raty"></div>
-              </div>
-              <div class="new01">
-                  <%= f.text_area :review %>
-              </div>
-              <div class="new01">
-                  <%= f.submit '変更を保存', class:"btn btn-dark" %>
-              </div>
-                  <% end %>
-                <p><%= link_to "削除", cosmetic_review_path(@review.id), method: :delete, class:"btn btn-danger" %></p>
-                  <script>
-                    var elem = document.getElementById('post_raty');
-                    var opt = {
-                        starOn: "<%= asset_path('star-on.png') %>",
-                        starOff: "<%= asset_path('star-off.png') %>",
-                        starHalf: "<%= asset_path('star-half.png') %>",
-                        scoreName: "review[rate]",
-                      };
-                    raty(elem,opt);
-                  </script>
-            </div>
+  <div class="row">
+    <div class="col-12">
+      <h4><span>レビューの編集</span></h4>
+      <%= form_with model: @review, url: cosmetic_review_path(@review.id) do |f| %>
+        <div class="item" style="margin-top: 100px;">
+          <div id="post_raty"></div>
         </div>
+        <div class="item" style="margin-top: 30px;">
+          <%= f.text_area :review %>
+        </div>
+        <div class="item" style="margin-top: 30px;">
+          <%= f.submit '変更', class:"btn btn-primary", style:"margin-right: 5px;" %>
+          <%= link_to "削除", cosmetic_review_path(@review.id), method: :delete, class:"btn btn-danger" %>
+        </div>
+      <% end %>
+      <script>
+        var elem = document.getElementById('post_raty');
+        var opt = {
+            starOn: "<%= asset_path('star-on.png') %>",
+            starOff: "<%= asset_path('star-off.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            scoreName: "review[rate]",
+          };
+        raty(elem,opt);
+      </script>
     </div>
+  </div>
 </div>

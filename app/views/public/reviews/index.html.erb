@@ -1,27 +1,21 @@
-  <div class="container">
-    <div class="row">
-      <div class="col-10">
-          <h4>検索結果 "<%= @keyword %>"</h4>
-              <ul>
-                <table class="table">
-                  <tbody>
-                    <% @cosmetics.each do |cosmetic| %>
-                       <tr>
-                         <td><%= link_to cosmetic_path(cosmetic.id) do %>
-                        <% if cosmetic.image.attached? %>
-                        <%= image_tag cosmetic.image, size: "50x50" %>
-                        <% else %>
-                        <%= image_tag 'no_image', size: "50x50" %>
-                        <% end %>
-                        <% end %></td>
-                         <td><%= cosmetic.brand %></td>
-                         <td><%= cosmetic.name %></td>
-                         <td><%= cosmetic.color %></td>
-                       </tr>
-                      <% end %>
-                  </tbody>
-                </table>
-              </ul>
+<div class="container">
+  <h4>検索結果 "<%= @keyword %>"</h4>
+  <div class="row">
+    <% @cosmetics.each do |cosmetic| %>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="item">
+          <%= link_to cosmetic_path(cosmetic.id) do %>
+            <% if cosmetic.image.attached? %>
+              <%= image_tag cosmetic.image, size: "130x130" %>
+            <% else %>
+              <%= image_tag 'no_image', size: "130x130" %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="item"><%= cosmetic.brand %></div>
+        <div class="item"><%= cosmetic.name %></div>
+        <div class="item"><%= cosmetic.color %></div>
       </div>
-    </div>
+    <% end %>
   </div>
+</div>

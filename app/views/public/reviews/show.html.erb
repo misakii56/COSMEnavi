@@ -2,51 +2,52 @@
   <%#= @review.inspect %>
   <div class="row">
     <div class="col-12">
-
-
-      <div class="new">
-          <% if @review.user.profile_image.attached? %>
-          <%= image_tag @review.user.profile_image, size: "50x50" %>
-          <% else %>
-          <%= image_tag 'no_image', size: "50x50" %>
-          <% end %>
-      <div class="new01">
+      <div class="row">
+        <% if @review.user.profile_image.attached? %>
+          <%= image_tag @review.user.profile_image, size: "60x60" %>
+        <% else %>
+          <%= image_tag 'no_image', size: "60x60" %>
+        <% end %>
+        <div class="review" style="font-size: 13px;">
           <%= @review.user.nickname %>
+        </div>
       </div>
-      <div class="new01">
-        <div id="rate"></div>
-      </div>
+      <div class="box" style="margin-left: 50px;">
+        <div class="review" style="margin-top: 20px;">
+          <div id="rate"></div>
+        </div>
 
-      <script>
-        document.getElementById('rate').innerHTML = '';
-        raty(document.getElementById('rate'), {
-            starOn: "<%= asset_path('star-on.png') %>",
-            starOff: "<%= asset_path('star-off.png') %>",
-            starHalf: "<%= asset_path('star-half.png') %>",
-            score: <%= @review.rate %>,
-            readOnly: true,
-          });
-      </script>
-        <div class="new01">
-            <%= @review.review %>
-            <% if @review.user_id == current_user.id %>
-            <div><%= link_to "➡︎", edit_cosmetic_review_path, class:"btn btn2--circle btn--circle-c btn2--shadow" %><div>
-            </div>
-            <% end %>
-
+        <script>
+          document.getElementById('rate').innerHTML = '';
+          raty(document.getElementById('rate'), {
+              starOn: "<%= asset_path('star-on.png') %>",
+              starOff: "<%= asset_path('star-off.png') %>",
+              starHalf: "<%= asset_path('star-half.png') %>",
+              score: <%= @review.rate %>,
+              readOnly: true,
+            });
+        </script>
+        <div class="review" style="font-size: 20px; margin-top: 10px;">
+          <%= @review.review %>
+        </div>
+        <div class="review">
+          <% if @review.user_id == current_user.id %>
+            <%= link_to "編集︎", edit_cosmetic_review_path, class:"btn btn-dark" %>
+          <% end %>
+        </div>
 
         <%= form_with model: @comment,url: cosmetic_review_comments_path(@review.cosmetic,@review) do |f| %>
-        <div class="new01">
-          <%= f.text_area :comment %>
-        </div>
-        <div class="new01">
-          <%= f.submit 'コメントする', class:"btn btn-primary" %>
-        </div>
+          <div class="review" style="margin-top: 50px;">
+            <%= f.text_area :comment %>
+          </div>
+          <div class="review">
+            <%= f.submit 'コメントする', class:"btn btn-primary" %>
+          </div>
         <% end %>
       </div>
     </div>
-    <div class="col-6">
-      <h5>コメント</h5>
+    <div class="col-7"style="margin-top: 50px;">
+      <h4>Comment</h4>
       <table class="table table-borderless">
         <thead>
           <tr>
@@ -56,30 +57,26 @@
             <th></th>
           </tr>
         </thead>
-      <tbody>
-        <tr>
-            <% @review.comments.each do |comment|%>
-            <td>
-              <% if @review.user.profile_image.attached? %>
-              <%= image_tag @review.user.profile_image, size: "30x30" %>
-              <% else %>
-              <%= image_tag 'no_image', size: "30x30" %>
-            </td>
-              <% end %>
-          <td>
-            <%= comment.user.nickname %>
-          </td>
-          <td>
-            <%= comment.comment %>
-          </td>
-            <% if comment.user_id == current_user.id %>
-          <td>
-            <%= link_to "➡︎", edit_cosmetic_review_comment_path(review_id: @review.id, id: comment.id), class:"btn btn2--circle btn--circle-c btn2--shadow" %>
-          </td>
-            <% end %>
-        </tr>
-            <% end %>
-      </tbody>
+        <tbody>
+          <% @review.comments.each do |comment|%>
+            <tr>
+              <td>
+                <% if @review.user.profile_image.attached? %>
+                  <%= image_tag @review.user.profile_image, size: "30x30" %>
+                <% else %>
+                  <%= image_tag 'no_image', size: "30x30" %>
+                <% end %>
+              </td>
+              <td><%= comment.user.nickname %></td>
+              <td><%= comment.comment %></td>
+              <td>
+                <% if comment.user_id == current_user.id %>
+                <%= link_to "➡︎", edit_cosmetic_review_comment_path(review_id: @review.id, id: comment.id), class:"btn btn2--circle btn--circle-c btn2--shadow" %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
       </table>
     </div>
   </div>

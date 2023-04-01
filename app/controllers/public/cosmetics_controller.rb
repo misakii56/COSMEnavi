@@ -17,14 +17,14 @@ class Public::CosmeticsController < ApplicationController
          or(Cosmetic.where("brand LIKE ?", "%#{params[:keyword]}%")).
          or(Cosmetic.where("color LIKE ?", "%#{params[:keyword]}%"))
       @keyword = params[:keyword]
-
+     
       @user = current_user
       @parsonal_color = @user.parsonal_color
       @skin_type = @user.skin_type
 
       render 'public/reviews/index'
     else
-      @cosmetics = Cosmetic.all
+      @cosmetics = Cosmetic.all.page(params[:page]).per(12)
     end
   end
 
