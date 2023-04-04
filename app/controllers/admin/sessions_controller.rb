@@ -14,7 +14,7 @@ class Admin::SessionsController < Devise::SessionsController
   #   super
   # end
   def after_sign_in_path_for(_resource)
-    admin_reviews_path
+    admin_cosmetics_path
   end
   def after_sign_out_path_for(_resource)
     root_path
