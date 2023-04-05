@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-    <h4>登録情報編集</h4>
+    <h4>会員情報編集</h4>
       <%= form_with model: @user, url: users_path, method: :patch do |f| %>
         <div class="item" style="margin-top: 20px; font-size: 15px;">プロフィール画像</div>
         <div class="item"><%= f.file_field :profile_image, accept: "image/*" %></div>
         <div class="item" style="margin-top: 20px; font-size: 15px;">ニックネーム</div>
         <div class="item" style="font-size: 15px;"><%= f.text_field :nickname %></div>
-        
+
         <div class="item" style="margin-top: 20px; font-size: 15px;">生年月日</div>
         <div class="item" style="font-size: 15px;">
           <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1923, end_year: (Time.now.year), default: Date.new(1989,1,1) %>

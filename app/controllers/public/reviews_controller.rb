@@ -19,8 +19,8 @@ class Public::ReviewsController < ApplicationController
     @comment = Comment.new
     @comments = Comment.all
   end
-  
- 
+
+
 
   def index
   end
@@ -38,7 +38,7 @@ class Public::ReviewsController < ApplicationController
   def destroy
     review = current_user.reviews.find(params[:id])  # データ（レコード）を1件取得
     review.destroy
-    redirect_to cosmetics_path
+    redirect_to cosmetic_path(review.cosmetic.id)
   end
 
       private
