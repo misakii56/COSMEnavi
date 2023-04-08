@@ -2,15 +2,13 @@
   <%#= @review.inspect %>
   <div class="row">
     <div class="col-12">
-      <div class="row">
+      <div class="review" style="font-size: 13px;">
         <% if @review.user.profile_image.attached? %>
           <%= image_tag @review.user.profile_image, size: "60x60" %>
         <% else %>
           <%= image_tag asset_path('no_image.jpg'), size: "60x60" %>
         <% end %>
-        <div class="review" style="font-size: 13px;">
-          <%= @review.user.nickname %>
-        </div>
+        <%= @review.user.nickname %>
       </div>
       <div class="box" style="margin-left: 50px;">
         <div class="review" style="margin-top: 20px;">
