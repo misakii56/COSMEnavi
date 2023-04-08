@@ -6,7 +6,7 @@
         <% if @review.user.profile_image.attached? %>
           <%= image_tag @review.user.profile_image, size: "60x60" %>
         <% else %>
-          <%= image_tag 'no_image', size: "60x60" %>
+          <%= image_tag asset_path('no_image.jpg'), size: "60x60" %>
         <% end %>
         <div class="review" style="font-size: 13px;">
           <%= @review.user.nickname %>
@@ -64,7 +64,7 @@
                 <% if @review.user.profile_image.attached? %>
                   <%= image_tag @review.user.profile_image, size: "30x30" %>
                 <% else %>
-                  <%= image_tag 'no_image', size: "30x30" %>
+                  <%= image_tag asset_path('no_image.jpg'), size: "30x30" %>
                 <% end %>
               </td>
               <td><%= comment.user.nickname %></td>
