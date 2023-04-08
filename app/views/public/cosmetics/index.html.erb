@@ -9,7 +9,7 @@
             <% if cosmetic.image.attached? %>
               <%= image_tag cosmetic.image, size: "130x130" %>
             <% else %>
-              <%= image_tag 'no_image', size: "130x130" %>
+              <%= image_tag asset_path('no_image.jpg'), size: "130x130" %>
             <% end %>
           <% end %>
         </div>
