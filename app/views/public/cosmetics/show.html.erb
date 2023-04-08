@@ -5,7 +5,7 @@
         <% if @cosmetic.image.attached? %>
         <%= image_tag @cosmetic.image, size: "200x200" %>
         <% else %>
-        <%= image_tag 'default_image', size: "200x200" %>
+        <%= image_tag asset_path('default-image.jpg'), size: "200x200" %>
         <% end %>
       </div>
       <div class="item"style="margin-top: 5px; font-size: 15px;">
@@ -22,7 +22,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12">
       <table class="table table-borderless" style="margin-top: 50px;">

@@ -5,22 +5,22 @@
       <% if @cosmetic.image.attached? %>
         <%= image_tag @cosmetic.image, size: "200x200" %>
       <% else %>
-        <%= image_tag 'default-image', size: "200x200" %>
+        <%= image_tag asset_path('default-image.jpg'), size: "200x200" %>
       <% end %>
     </div>
-    
+
     <div class="col-3">
       <div class="item" style="margin-top: 30px; font-size: 15px;">化粧品名</div>
       <div class="item" style="margin-top: 20px; font-size: 15px;">ブランド</div>
       <div class="item" style="margin-top: 20px; font-size: 15px;">カラー</div>
     </div>
-    
+
     <div class="col-3">
       <div class="item" style="margin-top: 30px; font-size: 15px;"><%= @cosmetic.name %></div>
       <div class="item" style="margin-top: 20px; font-size: 15px;"><%= @cosmetic.brand %></div>
       <div class="item" style="margin-top: 20px; font-size: 15px;"><%= @cosmetic.color %></div>
     </div>
   </div>
-  
+
   <div class="item"><%= link_to "編集する", edit_admin_cosmetic_path(@cosmetic.id), class:"btn btn-primary" %></div>
 </div>
