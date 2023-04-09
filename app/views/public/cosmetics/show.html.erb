@@ -8,8 +8,8 @@
         <%= image_tag asset_path('default-image.jpg'), size: "200x200" %>
         <% end %>
       </div>
-      <div class="item" style="margin-left: 190px; color: gray;">
-        <td>出典：<%= link_to URI.parse(@cosmetic.source).host,@cosmetic.source %></td>
+      <div class="item" style="margin-left: 190px;">
+        <div class="source">出典：<%= link_to URI.parse(@cosmetic.source).host,@cosmetic.source, class:"source" %></div>
       </div>
       <div class="item"style="margin-top: 5px; font-size: 15px;">
         <td><%= @cosmetic.brand %></td>
