@@ -60,13 +60,13 @@
             <tr>
               <td>
                 <% if @review.user.profile_image.attached? %>
-                  <%= image_tag @review.user.profile_image, size: "30x30" %>
+                  <%= image_tag @review.user.profile_image, size: "40x40" %>
                 <% else %>
-                  <%= image_tag asset_path('no_image.jpg'), size: "30x30" %>
+                  <%= image_tag asset_path('no_image.jpg'), size: "40x40" %>
                 <% end %>
               </td>
-              <td><%= comment.user.nickname %></td>
-              <td><%= comment.comment %></td>
+              <td style="font-size: 12px;"><%= comment.user.nickname %></td>
+              <td style="font-size: 12px;"><%= comment.comment %></td>
               <td>
                 <% if comment.user_id == current_user.id %>
                 <%= link_to "➡︎", edit_cosmetic_review_comment_path(review_id: @review.id, id: comment.id), class:"btn btn2--circle btn--circle-c btn2--shadow" %>
