@@ -1,4 +1,5 @@
 class Public::CommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
      review = Review.find(params[:review_id])
@@ -9,7 +10,7 @@ class Public::CommentsController < ApplicationController
   def edit
       @comment = Comment.find(params[:id])
   end
-  
+
   def update
     comment = Comment.find(params[:id])
     comment.update(comment_params)

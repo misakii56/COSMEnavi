@@ -1,4 +1,6 @@
 class Admin::SkinTypesController < ApplicationController
+  before_action :redirect_root
+
   def create
      skin_type = SkinType.new(skin_type_params)
      skin_type.save
@@ -18,7 +20,11 @@ class Admin::SkinTypesController < ApplicationController
     @skin_types = SkinType.all
   end
 end
- private
+
+private
+  def redirect_root
+    redirect_to root_path unless admin_signed_in?
+  end
   def skin_type_params
     params.require(:skin_type).permit(:type_name)
   end

@@ -1,4 +1,6 @@
 class Public::UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @user = current_user
     @parsonal_color = @user.parsonal_color

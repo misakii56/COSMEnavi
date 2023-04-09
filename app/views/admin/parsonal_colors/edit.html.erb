@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-6">
       <h3>パーソナルカラー編集</h3>
-      <div class="row">
-        <div class="item" style="margin-top: 30px; font-size:15px;">パーソナルカラー名</div>
-        <%= form_with model: @parsonal_color,url:admin_parsonal_color_path(@parsonal_color.id) do |f| %>
-          <div class="item" style="margin-top: 30px; margin-left: 10px; font-size:15px;"><%= f.text_field :color_name %></div>
-          <div class="item" style="margin-top: 10px; margin-left: 120px;"><%= f.submit '変更保存', class:"btn btn-primary" %></div>
-        <% end %>
-      </div>
+      <%= form_with model: @parsonal_color,url:admin_parsonal_color_path(@parsonal_color.id) do |f| %>
+        <div class="row">
+          <div class="item col-4" style="margin-top: 30px; font-size:15px;">パーソナルカラー名</div>
+          <div class="item col-3" style="margin-top: 30px; font-size:15px;"><%= f.text_field :color_name %></div>
+          <div class="item col-1" style="margin-top: 30px;"><%= f.submit '保存', class:"btn btn-primary" %></div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

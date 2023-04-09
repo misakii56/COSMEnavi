@@ -1,5 +1,6 @@
 class Admin::ParsonalColorsController < ApplicationController
-  
+  before_action :redirect_root
+
   def create
      parsonal_color = ParsonalColor.new(parsonal_color_params)
      parsonal_color.save
@@ -14,13 +15,17 @@ class Admin::ParsonalColorsController < ApplicationController
     @parsonal_color.update(parsonal_color_params)
     redirect_to '/admin/parsonal_colors'
   end
-  
+
   def index
      @parsonal_color = ParsonalColor.new
      @parsonal_colors = ParsonalColor.all
   end
-  
-    private
+
+private
+  def redirect_root
+    redirect_to root_path unless admin_signed_in?
+  end
+
   def parsonal_color_params
     params.require(:parsonal_color).permit(:color_name)
   end

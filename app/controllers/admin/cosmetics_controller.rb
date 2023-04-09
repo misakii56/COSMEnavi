@@ -1,8 +1,10 @@
 class Admin::CosmeticsController < ApplicationController
+  before_action :redirect_root
+
   def new
     @cosmetic = Cosmetic.new
   end
-  
+
   def create
      @cosmetic = Cosmetic.new(cosmetic_params)
      @cosmetic.save
@@ -21,14 +23,18 @@ class Admin::CosmeticsController < ApplicationController
   def edit
     @cosmetic = Cosmetic.find(params[:id])
   end
-  
+
   def update
     @cosmetic = Cosmetic.find(params[:id])
     @cosmetic.update(cosmetic_params)
     redirect_to admin_cosmetic_path(@cosmetic.id)
   end
+
+private
+  def redirect_root
+    redirect_to root_path unless admin_signed_in?
+  end
   
-     private
   def cosmetic_params
     params.require(:cosmetic).permit(:name, :brand, :image, :color)
   end
