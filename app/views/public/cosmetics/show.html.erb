@@ -9,7 +9,7 @@
         <% end %>
       </div>
       <div class="item" style="margin-left: 190px; color: gray;">
-        <td>出典：<%= @cosmetic.source %></td>
+        <td>出典：<%= link_to URI.parse(@cosmetic.source).host,@cosmetic.source %></td>
       </div>
       <div class="item"style="margin-top: 5px; font-size: 15px;">
         <td><%= @cosmetic.brand %></td>
