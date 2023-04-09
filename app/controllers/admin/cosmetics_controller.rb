@@ -34,8 +34,8 @@ private
   def redirect_root
     redirect_to root_path unless admin_signed_in?
   end
-  
+
   def cosmetic_params
-    params.require(:cosmetic).permit(:name, :brand, :image, :color)
+    params.require(:cosmetic).permit(:name, :brand, :image, :color, :source)
   end
 end
