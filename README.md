@@ -29,6 +29,6 @@ https://docs.google.com/spreadsheets/d/1Ib70XXwL-TYLmKHbH6M7k1F_D6ctD2aKBynz1pTf
 ## 開発環境
 - OS：MacOS
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
+- フレームワーク：Ruby on Rails！
 - JSライブラリ：jQuery
 - IDE：Cloud9
