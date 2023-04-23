@@ -16,7 +16,7 @@
 化粧品を使う人、化粧品が好きな人
 
 ### 主な利用シーン
-化粧品を買う時、使った化粧品のレビューを投稿する時
+化粧品を買う時、使った化粧品のレビューを投稿する時.
 
 ## 実装機能リスト
 https://docs.google.com/spreadsheets/d/1PK3gTAsXpYWyOJt19a9InF-lMQ4s7F2imY43QS8bcrs/edit?usp=sharing
