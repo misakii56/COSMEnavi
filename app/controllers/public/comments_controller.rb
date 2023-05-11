@@ -8,7 +8,10 @@ class Public::CommentsController < ApplicationController
   end
 
   def edit
-      @comment = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
+    unless user_signed_in? && (current_user == @comment.user)
+      redirect_to root_path
+    end
   end
 
   def update

@@ -59,8 +59,8 @@
           <% @review.comments.each do |comment|%>
             <tr>
               <td>
-                <% if @review.user.profile_image.attached? %>
-                  <%= image_tag @review.user.profile_image, size: "40x40" %>
+                <% if comment.user.profile_image.attached? %>
+                  <%= image_tag comment.user.profile_image, size: "40x40" %>
                 <% else %>
                   <%= image_tag asset_path('no_image.jpg'), size: "40x40" %>
                 <% end %>

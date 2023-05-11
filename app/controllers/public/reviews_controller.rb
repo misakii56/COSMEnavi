@@ -21,8 +21,6 @@ class Public::ReviewsController < ApplicationController
     @comments = Comment.all
   end
 
-
-
   def index
   end
 
