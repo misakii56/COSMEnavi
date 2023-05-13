@@ -23,6 +23,7 @@ class Public::CosmeticsController < ApplicationController
       render 'public/reviews/index'
     else
       @cosmetics = Cosmetic.all.page(params[:page]).per(12)
+      render 'public/reviews/index'
     end
   end
 

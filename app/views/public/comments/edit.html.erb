@@ -1,5 +1,13 @@
 <div class="container">
   <div class="row">
+    <% if @comment.errors.any? %>
+      <%= @comment.errors.count %>件のエラーが発生しました
+      <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
     <div class="col-12">
       <h4><span>コメントの編集</span></h4>
       <%= form_with model: @comment, url: cosmetic_review_comment_path(@comment.id) do |f| %>

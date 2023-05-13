@@ -22,7 +22,7 @@ class Public::ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
     @comment = Comment.new
-    @comments = Comment.all
+    @comments = Comment.where(review: @review)
   end
 
   def index
