@@ -1,5 +1,13 @@
 <div class="container">
   <div class="row">
+    <% if @parsonal_color.errors.any? %>
+      <%= @parsonal_color.errors.count %>件のエラーが発生しました
+      <ul>
+        <% @parsonal_color.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
     <div class="col-6">
       <h3>パーソナルカラー編集</h3>
       <%= form_with model: @parsonal_color,url:admin_parsonal_color_path(@parsonal_color.id) do |f| %>
