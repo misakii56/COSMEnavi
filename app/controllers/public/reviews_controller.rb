@@ -11,8 +11,12 @@ class Public::ReviewsController < ApplicationController
      @review = Review.new(review_params)
      @review.user_id = current_user.id
      @review.cosmetic_id = @cosmetic.id
-     @review.save
+  if @review.save
      redirect_to cosmetic_path(@cosmetic.id)
+  else
+    @reviews = @cosmetic.reviews
+    render template: "public/reviews/new"
+  end
   end
 
   def show
@@ -30,8 +34,11 @@ class Public::ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
-    @review.update(review_params)
-    redirect_to cosmetic_review_path(@review.id)
+    if @review.update(review_params)
+      redirect_to cosmetic_review_path(@review.id)
+    else
+      render template: "public/reviews/edit"
+    end
   end
 
   def destroy

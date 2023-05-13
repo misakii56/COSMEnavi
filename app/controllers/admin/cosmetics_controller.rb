@@ -6,9 +6,12 @@ class Admin::CosmeticsController < ApplicationController
   end
 
   def create
-     @cosmetic = Cosmetic.new(cosmetic_params)
-     @cosmetic.save
-     redirect_to admin_cosmetics_path
+    @cosmetic = Cosmetic.new(cosmetic_params)
+    if @cosmetic.save
+      redirect_to admin_cosmetics_path
+    else
+      render template: "admin/cosmetics/new"
+    end
   end
 
   def index
@@ -26,8 +29,11 @@ class Admin::CosmeticsController < ApplicationController
 
   def update
     @cosmetic = Cosmetic.find(params[:id])
-    @cosmetic.update(cosmetic_params)
-    redirect_to admin_cosmetic_path(@cosmetic.id)
+    if @cosmetic.update(cosmetic_params)
+      redirect_to admin_cosmetic_path(@cosmetic.id)
+    else
+      render template: "admin/cosmetics/edit"
+    end
   end
 
 private

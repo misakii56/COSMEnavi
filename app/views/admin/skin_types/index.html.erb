@@ -1,5 +1,13 @@
 <div class="container">
   <div class="row">
+    <% if @skin_type.errors.any? %>
+      <%= @skin_type.errors.count %>件のエラーが発生しました
+      <ul>
+        <% @skin_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
     <div class="col-6">
       <h3>肌タイプ一覧・追加</h3>
       <%= form_with model: @skin_type,url:admin_skin_types_path do |f| %>

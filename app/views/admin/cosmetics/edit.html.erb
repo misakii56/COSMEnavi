@@ -1,5 +1,13 @@
 <div class="container">
   <div class="row">
+    <% if @cosmetic.errors.any? %>
+      <%= @cosmetic.errors.count %>件のエラーが発生しました
+      <ul>
+        <% @cosmetic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
     <div class="col-12">
       <h4>化粧品編集</h4>
       <div class="item" style="margin-top: 50px; font-size: 15px;">化粧品画像</div>

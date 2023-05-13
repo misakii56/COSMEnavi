@@ -4,6 +4,16 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :comments
   has_one_attached :profile_image
+
+  validates :nickname, presence: true
+  validates :birth_date, presence: true
+  validates :introduction, presence: true
+  validates :nickname, presence: true
+  validates :email, presence: true
+  validates :encrypted_password, presence: true
+  validates :skin_type_id, presence: true
+  validates :parsonal_color_id, presence: true
+
  def active_for_authentication?
     super && (is_deleted == false)
  end

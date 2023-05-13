@@ -1,5 +1,13 @@
 <div class="container">
   <div class="row">
+    <% if @review.errors.any? %>
+      <%= @review.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+    <% end %>
     <div class="col-12">
       <h4><span>レビューの編集</span></h4>
       <%= form_with model: @review, url: cosmetic_review_path(@review.id) do |f| %>

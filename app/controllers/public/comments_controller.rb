@@ -2,11 +2,10 @@ class Public::CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-     review = Review.find(params[:review_id])
-     comment = review.comments.create!(comment: params[:comment][:comment], user_id: current_user.id)
-     redirect_to cosmetic_review_path(comment.review.cosmetic,  comment.review)
+    review = Review.find(params[:review_id])
+    comment = review.comments.create!(comment: params[:comment][:comment], user_id: current_user.id)
   end
-
+  
   def edit
     @comment = Comment.find(params[:id])
     unless user_signed_in? && (current_user == @comment.user)
@@ -16,8 +15,11 @@ class Public::CommentsController < ApplicationController
 
   def update
     comment = Comment.find(params[:id])
-    comment.update(comment_params)
-    redirect_to cosmetic_review_path(comment.review.cosmetic, comment.review)
+    if comment.update(comment_params)
+      redirect_to cosmetic_review_path(comment.review.cosmetic, comment.review)
+    else
+      render template: "public/comments/edit"
+    end
   end
 
   def destroy

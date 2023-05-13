@@ -2,17 +2,24 @@ class Admin::SkinTypesController < ApplicationController
   before_action :redirect_root
 
   def create
-     skin_type = SkinType.new(skin_type_params)
-     skin_type.save
-     redirect_to '/admin/skin_types'
+    @skin_type = SkinType.new(skin_type_params)
+    if @skin_type.save
+      redirect_to '/admin/skin_types'
+    else
+      @skin_types = SkinType.all
+      render template: "admin/skin_types/index"
+    end
   end
   def edit
       @skin_type = SkinType.find(params[:id])
   end
   def update
     @skin_type = SkinType.find(params[:id])
-    @skin_type.update(skin_type_params)
-    redirect_to '/admin/skin_types'
+    if @skin_type.update(skin_type_params)
+      redirect_to '/admin/skin_types'
+    else
+      render template: "admin/skin_types/edit"
+    end
   end
 
   def index
