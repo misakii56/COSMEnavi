@@ -1,5 +1,5 @@
 # README
-# COSMEnavi
+# COSMEnav
 
 ## サイト概要
 ### サイトテーマ
