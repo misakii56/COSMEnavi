@@ -6,7 +6,7 @@
         <div class="item">
           <%= link_to cosmetic_path(cosmetic.id) do %>
             <% if cosmetic.image.attached? %>
-              <%= image_tag cosmetic.image, size: "131x130" %>
+              <%= image_tag cosmetic.image, size: "130x130" %>
             <% else %>
               <%= image_tag asset_path('default-image.jpg'), size: "130x130" %>
             <% end %>
